@@ -4,12 +4,12 @@ dowload the api.py file in server folder
 use XAMPP to start a Mysql and Apache server
 the database must be named "Dapp_login" and must have a table named "UserData" with these attributes:
 id (primary key, auto increment)
-username (unic)
+username (unique)
 password
 name
 surname
 email
-wallet (unic)
+wallet (unique)
 registrationType
 
 run "python3 api.py" to start the server
