@@ -1,0 +1,102 @@
+/* Styles go here */
+textarea { vertical-align: top; }
+
+body{
+  background-color: DarkCyan;
+  color: white;
+  padding: 40px;
+  font-family: Arial;
+  text-align: center;
+   vertical-align: middle;
+   margin:auto
+}
+#param1{
+  position: absolute;
+left: 600px;
+top: 20px;
+}
+#param2{
+  position: absolute;
+left: 650px;
+top: 100px;
+}
+#param3{
+  position: absolute;
+left: 653px;
+top: 135px;
+}
+#param4{
+  position: absolute;
+left: 730px;
+top: 200px;
+}
+#param5{
+  position: absolute;
+left: 800px;
+top: 200px;
+}
+#param6{
+  position: absolute;
+  color : red;
+left: 730px;
+top: 165px;
+}
+#param7{
+  position: absolute;
+left: 682px;
+top: 170px;
+}
+#param8{
+  position: absolute;
+left: 660px;
+top: 205px;
+}
+#param9{
+  position: absolute;
+left: 683px;
+top: 240px;
+}
+#param10{
+  position: absolute;
+  color: red;
+left: 760px;
+top: 270px;
+}
+#param11{
+  position: absolute;
+left: 730px;
+top: 305px;
+}
+#param12{
+  position: absolute;
+left: 830px;
+top: 305px;
+}
+#param13{
+  position: absolute;
+left: 600px;
+top: 100px;
+}
+#para{
+  color : red;
+}
+.button {
+  background-color: DarkBlue;
+  border: 2px solid red;
+  border-radius: 9px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 0 5px #999;
+}
+.button:hover {
+  background-color: white;
+  color: black;
+}
+.button:active {
+  background-color: white;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}

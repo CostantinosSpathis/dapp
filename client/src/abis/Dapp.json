@@ -1,0 +1,621 @@
+{
+  "contractName": "Dapp",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_designHash",
+          "type": "string"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "get",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_designHash\",\"type\":\"string\"}],\"name\":\"set\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/costantinos/Documenti/giyh/client/src/contracts/Dapp.sol\":\"Dapp\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/costantinos/Documenti/giyh/client/src/contracts/Dapp.sol\":{\"keccak256\":\"0xc7b13a61102bf1862eeecc360e822acbd47b352d48f8a9c107719545639df951\",\"urls\":[\"bzz-raw://dfddd9e23e11a76ce665442aa55557a948f589e015701577d8c4d1d4a12a05b7\",\"dweb:/ipfs/QmNi2LKyur48FBo5PWhp1ZqtwnkGz5ji2L2a7snBGvCfJh\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506103bc806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80634ed3885e1461003b5780636d4ce63c14610057575b600080fd5b61005560048036038101906100509190610222565b610075565b005b61005f61008f565b60405161006c919061029c565b60405180910390f35b806000908051906020019061008b929190610131565b5050565b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101275780601f106100fc57610100808354040283529160200191610127565b820191906000526020600020905b81548152906001019060200180831161010a57829003601f168201915b5050505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061017257805160ff19168380011785556101a0565b828001600101855582156101a0579182015b8281111561019f578251825591602001919060010190610184565b5b5090506101ad91906101b1565b5090565b5b808211156101ca5760008160009055506001016101b2565b5090565b600082601f8301126101df57600080fd5b81356101f26101ed826102eb565b6102be565b9150808252602083016020830185838301111561020e57600080fd5b610219838284610333565b50505092915050565b60006020828403121561023457600080fd5b600082013567ffffffffffffffff81111561024e57600080fd5b61025a848285016101ce565b91505092915050565b600061026e82610317565b6102788185610322565b9350610288818560208601610342565b61029181610375565b840191505092915050565b600060208201905081810360008301526102b68184610263565b905092915050565b6000604051905081810181811067ffffffffffffffff821117156102e157600080fd5b8060405250919050565b600067ffffffffffffffff82111561030257600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600082825260208201905092915050565b82818337600083830152505050565b60005b83811015610360578082015181840152602081019050610345565b8381111561036f576000848401525b50505050565b6000601f19601f830116905091905056fea264697066735822122072ba3a4aa2da5096510f6fa3d83fd9a746853cdba10ff0ef7c67bf102ea1076164736f6c63430007000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80634ed3885e1461003b5780636d4ce63c14610057575b600080fd5b61005560048036038101906100509190610222565b610075565b005b61005f61008f565b60405161006c919061029c565b60405180910390f35b806000908051906020019061008b929190610131565b5050565b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101275780601f106100fc57610100808354040283529160200191610127565b820191906000526020600020905b81548152906001019060200180831161010a57829003601f168201915b5050505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061017257805160ff19168380011785556101a0565b828001600101855582156101a0579182015b8281111561019f578251825591602001919060010190610184565b5b5090506101ad91906101b1565b5090565b5b808211156101ca5760008160009055506001016101b2565b5090565b600082601f8301126101df57600080fd5b81356101f26101ed826102eb565b6102be565b9150808252602083016020830185838301111561020e57600080fd5b610219838284610333565b50505092915050565b60006020828403121561023457600080fd5b600082013567ffffffffffffffff81111561024e57600080fd5b61025a848285016101ce565b91505092915050565b600061026e82610317565b6102788185610322565b9350610288818560208601610342565b61029181610375565b840191505092915050565b600060208201905081810360008301526102b68184610263565b905092915050565b6000604051905081810181811067ffffffffffffffff821117156102e157600080fd5b8060405250919050565b600067ffffffffffffffff82111561030257600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600082825260208201905092915050565b82818337600083830152505050565b60005b83811015610360578082015181840152602081019050610345565b8381111561036f576000848401525b50505050565b6000601f19601f830116905091905056fea264697066735822122072ba3a4aa2da5096510f6fa3d83fd9a746853cdba10ff0ef7c67bf102ea1076164736f6c63430007000033",
+  "immutableReferences": {},
+  "sourceMap": "59:207:0:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "59:207:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;99:82;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;185:79;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;99:82;165:11;152:10;:24;;;;;;;;;;;;:::i;:::-;;99:82;:::o;185:79::-;221:13;249:10;242:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;185:79;:::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;6:442::-;;108:3;101:4;93:6;89:17;85:27;75:2;;126:1;123;116:12;75:2;163:6;150:20;185:65;200:49;242:6;200:49;:::i;:::-;185:65;:::i;:::-;176:74;;270:6;263:5;256:21;306:4;298:6;294:17;339:4;332:5;328:16;374:3;365:6;360:3;356:16;353:25;350:2;;;391:1;388;381:12;350:2;401:41;435:6;430:3;425;401:41;:::i;:::-;68:380;;;;;;;:::o;456:347::-;;570:2;558:9;549:7;545:23;541:32;538:2;;;586:1;583;576:12;538:2;649:1;638:9;634:17;621:31;672:18;664:6;661:30;658:2;;;704:1;701;694:12;658:2;724:63;779:7;770:6;759:9;755:22;724:63;:::i;:::-;714:73;;600:193;532:271;;;;:::o;810:347::-;;922:39;955:5;922:39;:::i;:::-;973:71;1037:6;1032:3;973:71;:::i;:::-;966:78;;1049:52;1094:6;1089:3;1082:4;1075:5;1071:16;1049:52;:::i;:::-;1122:29;1144:6;1122:29;:::i;:::-;1117:3;1113:39;1106:46;;902:255;;;;;:::o;1164:310::-;;1311:2;1300:9;1296:18;1288:26;;1361:9;1355:4;1351:20;1347:1;1336:9;1332:17;1325:47;1386:78;1459:4;1450:6;1386:78;:::i;:::-;1378:86;;1282:192;;;;:::o;1481:256::-;;1543:2;1537:9;1527:19;;1581:4;1573:6;1569:17;1680:6;1668:10;1665:22;1644:18;1632:10;1629:34;1626:62;1623:2;;;1701:1;1698;1691:12;1623:2;1721:10;1717:2;1710:22;1521:216;;;;:::o;1744:322::-;;1888:18;1880:6;1877:30;1874:2;;;1920:1;1917;1910:12;1874:2;1987:4;1983:9;1976:4;1968:6;1964:17;1960:33;1952:41;;2051:4;2045;2041:15;2033:23;;1811:255;;;:::o;2073:122::-;;2167:5;2161:12;2151:22;;2132:63;;;:::o;2203:163::-;;2318:6;2313:3;2306:19;2355:4;2350:3;2346:14;2331:29;;2299:67;;;;:::o;2375:145::-;2456:6;2451:3;2446;2433:30;2512:1;2503:6;2498:3;2494:16;2487:27;2426:94;;;:::o;2529:268::-;2594:1;2601:101;2615:6;2612:1;2609:13;2601:101;;;2691:1;2686:3;2682:11;2676:18;2672:1;2667:3;2663:11;2656:39;2637:2;2634:1;2630:10;2625:15;;2601:101;;;2717:6;2714:1;2711:13;2708:2;;;2782:1;2773:6;2768:3;2764:16;2757:27;2708:2;2578:219;;;;:::o;2805:97::-;;2893:2;2889:7;2884:2;2877:5;2873:14;2869:28;2859:38;;2853:49;;;:::o",
+  "source": "pragma solidity ^0.7.0;\npragma experimental ABIEncoderV2;\n\ncontract Dapp {\n  string designHash;\n\n  function set(string memory _designHash) public {\n    designHash = _designHash;\n  }\n\n  function get() public view returns (string memory) {\n    return designHash;\n  }\n}\n",
+  "sourcePath": "/home/costantinos/Documenti/giyh/client/src/contracts/Dapp.sol",
+  "ast": {
+    "absolutePath": "/home/costantinos/Documenti/giyh/client/src/contracts/Dapp.sol",
+    "exportedSymbols": {
+      "Dapp": [
+        23
+      ]
+    },
+    "id": 24,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "24:33:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 23,
+        "linearizedBaseContracts": [
+          23
+        ],
+        "name": "Dapp",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "mutability": "mutable",
+            "name": "designHash",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 23,
+            "src": "77:17:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 3,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "77:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 13,
+              "nodeType": "Block",
+              "src": "146:35:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9,
+                      "name": "designHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4,
+                      "src": "152:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 10,
+                      "name": "_designHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6,
+                      "src": "165:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "152:24:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 12,
+                  "nodeType": "ExpressionStatement",
+                  "src": "152:24:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "4ed3885e",
+            "id": 14,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "set",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6,
+                  "mutability": "mutable",
+                  "name": "_designHash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14,
+                  "src": "112:25:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "112:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "111:27:0"
+            },
+            "returnParameters": {
+              "id": 8,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "146:0:0"
+            },
+            "scope": 23,
+            "src": "99:82:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 21,
+              "nodeType": "Block",
+              "src": "236:28:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 19,
+                    "name": "designHash",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 4,
+                    "src": "249:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 18,
+                  "id": 20,
+                  "nodeType": "Return",
+                  "src": "242:17:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "6d4ce63c",
+            "id": 22,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 15,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "197:2:0"
+            },
+            "returnParameters": {
+              "id": 18,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 22,
+                  "src": "221:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 16,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "221:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "220:15:0"
+            },
+            "scope": 23,
+            "src": "185:79:0",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 24,
+        "src": "59:207:0"
+      }
+    ],
+    "src": "0:267:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/costantinos/Documenti/giyh/client/src/contracts/Dapp.sol",
+    "exportedSymbols": {
+      "Dapp": [
+        23
+      ]
+    },
+    "id": 24,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "24:33:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 23,
+        "linearizedBaseContracts": [
+          23
+        ],
+        "name": "Dapp",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "mutability": "mutable",
+            "name": "designHash",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 23,
+            "src": "77:17:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 3,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "77:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 13,
+              "nodeType": "Block",
+              "src": "146:35:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 9,
+                      "name": "designHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4,
+                      "src": "152:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 10,
+                      "name": "_designHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6,
+                      "src": "165:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "152:24:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 12,
+                  "nodeType": "ExpressionStatement",
+                  "src": "152:24:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "4ed3885e",
+            "id": 14,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "set",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 7,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6,
+                  "mutability": "mutable",
+                  "name": "_designHash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14,
+                  "src": "112:25:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "112:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "111:27:0"
+            },
+            "returnParameters": {
+              "id": 8,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "146:0:0"
+            },
+            "scope": 23,
+            "src": "99:82:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 21,
+              "nodeType": "Block",
+              "src": "236:28:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 19,
+                    "name": "designHash",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 4,
+                    "src": "249:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 18,
+                  "id": 20,
+                  "nodeType": "Return",
+                  "src": "242:17:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "6d4ce63c",
+            "id": 22,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 15,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "197:2:0"
+            },
+            "returnParameters": {
+              "id": 18,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 22,
+                  "src": "221:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 16,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "221:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "220:15:0"
+            },
+            "scope": 23,
+            "src": "185:79:0",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 24,
+        "src": "59:207:0"
+      }
+    ],
+    "src": "0:267:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x7190C31d37679C443C1c2EbBeC7deA1ED985a929",
+      "transactionHash": "0x2c8736652e9eacc3730de744a74791729fe9d4cfe511f20ffc9b81a7c6b1a467"
+    },
+    "5778": {
+      "events": {},
+      "links": {},
+      "address": "0x3c8dD81121ce63484562a8773d37A9B910C706e8",
+      "transactionHash": "0x8a92f174bb3acfaa2fc6b27e0d532d9a489a01036ed336ee37ad2d6dcce55cd5"
+    },
+    "577898": {
+      "events": {},
+      "links": {},
+      "address": "0x861452b1949deeacDb08054C23DC375f04473f24",
+      "transactionHash": "0x5bf67e9bfa64ccb667627de6d3748e8bce148a13da3fddfa0b0a6e561b819ea5"
+    }
+  },
+  "schemaVersion": "3.3.1",
+  "updatedAt": "2020-11-02T16:20:08.804Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
