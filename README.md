@@ -1,5 +1,5 @@
 # dapp
-server
+server:
 dowload the api.py file in server folder
 use XAMPP to start a Mysql and Apache server
 the database must be named "Dapp_login" and must have a table named "UserData" with these attributes:
@@ -14,7 +14,7 @@ registrationType
 
 run "python3 api.py" to start the server
 
-client
+client:
 to start choose a folder
 run "truffle unbox react"
 replace all the files with the files in the client folder
