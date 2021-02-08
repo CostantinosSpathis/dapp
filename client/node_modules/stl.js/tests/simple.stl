@@ -1,0 +1,9 @@
+solid simple
+  facet normal 0 1 0
+    outer loop
+      vertex 1 5 1
+      vertex 3 6 3.625e-2
+      vertex 1 2.0375 3e+4
+    endloop
+  endfacet
+endsolid simple
