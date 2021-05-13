@@ -1,8 +1,6 @@
 /* Styles go here */
-/*textarea { vertical-align: top; }*/
-/*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">*/
 body{
-  background-color: DarkCyan;
+  background-color: White;
   color: white;
   padding: 40px;
   font-family: Arial;
@@ -121,11 +119,12 @@ top: 120px;
 }
 #param35{
   position: absolute;
-  color:white;
+  color:black;
   left: 800px;
   top: 100px;
 }
 #titleMainPage{
+  color:black;
   position: absolute;
   font-variant: small-caps;
   top:250px;
@@ -134,6 +133,7 @@ top: 120px;
   font-size:50px;
 }
 #userData0{
+  color:black;
   position: absolute;
   font-variant: small-caps;
   top:330px;
@@ -141,6 +141,7 @@ top: 120px;
   font-size:40px;
 }
 #userData1{
+  color:black;
   position: absolute;
   font-variant: small-caps;
   font-weight: bold;
@@ -149,12 +150,14 @@ top: 120px;
   font-size:20px;
 }
 #userData2{
+  color:black;
   position: absolute;
   top:390px;
   left:680px;
   font-size:20px;
 }
 #userData3{
+  color:black;
   position: absolute;
   font-variant: small-caps;
   font-weight: bold;
@@ -163,12 +166,14 @@ top: 120px;
   font-size:20px;
 }
 #userData4{
+  color:black;
   position: absolute;
   top:450px;
   left:390px;
   font-size:20px;
 }
 #userData5{
+  color:black;
   position: absolute;
   font-variant: small-caps;
   font-weight: bold;
@@ -177,12 +182,14 @@ top: 120px;
   font-size:20px;
 }
 #userData6{
+  color:black;
   position: absolute;
   top:450px;
   left:745px;
   font-size:20px;
 }
 #userData7{
+  color:black;
   position: absolute;
   font-variant: small-caps;
   font-weight: bold;
@@ -191,12 +198,14 @@ top: 120px;
   font-size:20px;
 }
 #userData8{
+  color:black;
   position: absolute;
   top:450px;
   left:1110px;
   font-size:20px;
 }
 #playerDetailsTitle{
+  color:black;
   position: absolute;
   font-variant: small-caps;
   top:100px;
@@ -205,6 +214,7 @@ top: 120px;
   font-size:50px;
 }
 #playerDetails0{
+  color:black;
   position: absolute;
   font-variant: small-caps;
   font-weight: bold;
@@ -213,12 +223,14 @@ top: 120px;
   font-size:20px;
 }
 #playerDetails1{
+  color:black;
   position: absolute;
   top:200px;
   left:610px;
   font-size:20px;
 }
 #playerDetails2{
+  color:black;
   position: absolute;
   font-variant: small-caps;
   font-weight: bold;
@@ -227,12 +239,14 @@ top: 120px;
   font-size:20px;
 }
 #playerDetails3{
+  color:black;
   position: absolute;
   top:200px;
   left:823px;
   font-size:20px;
 }
 #playerDetails4{
+  color:black;
   position: absolute;
   font-variant: small-caps;
   font-weight: bold;
@@ -241,17 +255,20 @@ top: 120px;
   font-size:20px;
 }
 #playerDetails5{
+  color:black;
   position: absolute;
   top:200px;
   left:1035px;
   font-size:20px;
 }
 #playerDetails6{
+  color:black;
   position: absolute;
   top:250px;
   left:750px;
 }
 #announce1{
+  color:black;
   position: absolute;
   top:50px;
   left:670px;
@@ -266,6 +283,7 @@ top: 120px;
   font-size:20px;
 }
 #announce4{
+  color:black;
   position: absolute;
   top:550px;
   left:650px;
@@ -281,7 +299,7 @@ top: 120px;
   left:600px;
   background-color: #EAEAEA;
   width: 435px;
-  border: 5px solid blue;
+  border: 5px solid #696969;
   padding: 50px;
   margin: 20px;
   color:black;
@@ -292,6 +310,7 @@ top: 120px;
   left:200px;
 }
 #result{
+  color:black;
   font-variant: small-caps;
   font-size:20px;
 }
@@ -299,6 +318,10 @@ top: 120px;
   position:absolute;
   top:80px;
   left:200px;
+
+}
+#writtenText{
+  color:black;
 
 }
 .logo1 {
@@ -341,18 +364,21 @@ font-size: 20px;
   bottom: -12px;
   left: -12px;
   z-index: -1;
-  background: rgba(0, 0, 0, 0.08);
+  background: #696969;
   border-radius: 4px;
+}
+.bg-pri{
+    background-color:#D3D3D3;
 }
 .login h1 {
   margin: -20px -20px 21px;
   line-height: 40px;
   font-size: 30px;
   font-weight: bold;
-  color: #555;
+  color: #000000;
   text-align: center;
   text-shadow: 0 1px white;
-  background: #D2B48C;
+  background: #DCDCDC;
   border-bottom: 1px solid #cfcfcf;
   border-radius: 3px 3px 0 0;
   background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
@@ -439,9 +465,7 @@ input[type=text]:focus, input[type=password]:focus {
   box-shadow: 0 3px #666;
   transform: translateY(4px);
 }
-#customTable:hover{
-  background-color: white;
-}
+
 .selectReact{
   width:200px;
   color:black;
