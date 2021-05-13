@@ -643,7 +643,7 @@ sendData =  (event) => {
                registrationType : registrationType
                     }).then(async (response) => {
                                 console.log(response.data)
-                                if(response.data == "succes")
+                                if(response.data == "success")
                                 {
                                     await this.setState({register : false})
                                     if (registrationType == "player") {
@@ -1185,6 +1185,7 @@ refreshC = (event) =>{
     console.log("avaibility",result1[i].expired)
     console.log("decoding")
     var tmp = this.getIpfsHashFromBytes32(result1[i].filehash)
+    console.log(result1[i].vendor)
     tmp = "https://ipfs.infura.io/ipfs/"+tmp
     console.log(tmp)
     result1[i].filehash=tmp
@@ -1764,14 +1765,14 @@ if(this.state.designSelectedM == true){
 
                 {/* loading part*/}
                 {(this.state.loading) && (<h1 id="param35">Loading</h1>)}
-                {(this.state.loading) && (<Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+                {(this.state.loading) && (<Navbar bg="pri" expand="lg" fixed="top" variant="light">
                 <Navbar.Brand >Marketplace</Navbar.Brand>
                 <Nav className="mr-auto">
                 </Nav>
                 </Navbar>)}
                 {/*end loading part*/}
                 {/*login section*/}
-                {(!this.state.isLogged && !this.state.loading && !this.state.addPrinter && !this.state.printReg) && (<Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+                {(!this.state.isLogged && !this.state.loading && !this.state.addPrinter && !this.state.printReg) && (<Navbar bg="pri" expand="lg" fixed="top" variant="light">
                 <Navbar.Brand >Marketplace</Navbar.Brand>
                 <Nav className="mr-auto">
                 </Nav>
@@ -1880,7 +1881,7 @@ if(this.state.designSelectedM == true){
                 {/*main section*/}
                 { (this.state.ethBrowser && this.state.isLogged && this.state.main && !this.state.loading && this.state.designer && !this.state.player ) && (
                  <div>
-                  <Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+                  <Navbar bg="pri" expand="lg" fixed="top" variant="light">
                   <Navbar.Brand >Marketplace</Navbar.Brand>
                   <Nav className="mr-auto">
                   <NavDropdown title="My designs" id="basic-nav-dropdown">
@@ -1894,13 +1895,13 @@ if(this.state.designSelectedM == true){
                 )}
                 { (this.state.ethBrowser && this.state.isLogged && this.state.main && !this.state.loading && !this.state.manager && this.state.player && !this.state.designer ) && (
                  <div>
-                  <Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+                  <Navbar bg="pri" expand="lg" fixed="top" variant="light">
                   <Navbar.Brand >Marketplace</Navbar.Brand>
                   <Nav className="mr-auto">
                   <Nav.Link href="#" onClick={this.toPlayerDetails} >Player details</Nav.Link>
                   <Nav.Link href="#"  onClick={this.toAddPrinter}>Add printer</Nav.Link>
                   <NavDropdown title="Designs" id="basic-nav-dropdown">
-                       <NavDropdown.Item href="#" onClick={this.toCurrentDesigns}>List avaible design to vote</NavDropdown.Item>
+                       <NavDropdown.Item href="#" onClick={this.toCurrentDesigns}>List available design to vote</NavDropdown.Item>
                        <NavDropdown.Item href="#" onClick={this.toRegisteredDesigns}>Vote registered design</NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link href="#" onClick={this.logoutU}>Logout</Nav.Link>
@@ -1910,7 +1911,7 @@ if(this.state.designSelectedM == true){
                 )}
                 { (this.state.ethBrowser && this.state.isLogged && this.state.main && !this.state.loading && !this.state.manager && this.state.player && this.state.designer ) && (
                  <div>
-                  <Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+                  <Navbar bg="pri" expand="lg" fixed="top" variant="light">
                   <Navbar.Brand >Marketplace</Navbar.Brand>
                   <Nav className="mr-auto">
                   <Nav.Link href="#" onClick={this.toPlayerDetails} >Player details</Nav.Link>
@@ -1920,7 +1921,7 @@ if(this.state.designSelectedM == true){
                        <NavDropdown.Item href="#" onClick={this.toCalculateResult}>Calculate Result</NavDropdown.Item>
                   </NavDropdown>
                   <NavDropdown title="Designs" id="basic-nav-dropdown">
-                       <NavDropdown.Item href="#" onClick={this.toCurrentDesigns}>List avaible design to vote</NavDropdown.Item>
+                       <NavDropdown.Item href="#" onClick={this.toCurrentDesigns}>List available design to vote</NavDropdown.Item>
                        <NavDropdown.Item href="#" onClick={this.toRegisteredDesigns}>Vote registered design</NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link href="#" onClick={this.logoutU}>Logout</Nav.Link>
@@ -1939,9 +1940,9 @@ if(this.state.designSelectedM == true){
 
 
 
-                {/*see avaible design*/}
+                {/*see available design*/}
                 { (this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && this.state.currentDesigns && !this.state.manager ) &&
-                    (<Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+                    (<Navbar bg="pri" expand="lg" fixed="top" variant="light">
                     <Navbar.Brand >Marketplace</Navbar.Brand>
                     <Nav className="mr-auto">
                     <Nav.Link href="#" onClick={this.toMainC}>Home</Nav.Link>
@@ -1949,13 +1950,13 @@ if(this.state.designSelectedM == true){
                     </Navbar>)}
               { (this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && this.state.currentDesigns && !this.state.manager ) &&
                   (<ul id="avaibleDesignsTable">
-                    <Table  striped bordered hover size="sm">
+                    <Table   bordered hover size="sm">
            <thead>
               <tr>
                <th>Design Number</th>
                <th>creatorAddress</th>
                <th>design</th>
-               <th>avaibility</th>
+               <th>availability</th>
              </tr>
            </thead>
            <tbody>
@@ -1964,7 +1965,7 @@ if(this.state.designSelectedM == true){
          </Table>
          <p><Button variant="secondary" onClick={this.refreshC} >Refresh </Button></p>
          { (this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && this.state.currentDesigns && this.state.designSelected && !this.state.manager) &&(
-                      <p> amount:
+                      <p id="writtenText"> amount:
                          <CurrencyInput value={this.state.amount} onChangeEvent={this.setCommit}
                          CurrencyInput suffix=" ETH" /></p>)}
 
@@ -1972,12 +1973,12 @@ if(this.state.designSelectedM == true){
                     <p><Button variant="secondary" onClick={this.designSelected2}>Submit</Button></p>)}
 
                 </ul>)}
-                {/*see avaible design*/}
+                {/*see available design*/}
 
 
                 {/*registered design*/}
                 { (this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && this.state.registeredDesigns && !this.state.manager ) &&
-                    (<Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+                    (<Navbar bg="pri" expand="lg" fixed="top" variant="light">
                     <Navbar.Brand >Marketplace</Navbar.Brand>
                     <Nav className="mr-auto">
                     <Nav.Link href="#" onClick={this.toMainR}>Home</Nav.Link>
@@ -1985,13 +1986,13 @@ if(this.state.designSelectedM == true){
                     </Navbar>)}
                 { (this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && this.state.registeredDesigns && !this.state.manager ) &&
                     (<ul id="registeredDesignPositition">
-                      <Table className="table" striped bordered hover size="sm">
+                      <Table className="table" bordered hover size="sm">
              <thead>
                 <tr>
                  <th>Design Number</th>
                  <th>creatorAddress</th>
                  <th>design</th>
-                 <th>avaibility</th>
+                 <th>availability</th>
                </tr>
              </thead>
              <tbody>
@@ -1999,7 +2000,7 @@ if(this.state.designSelectedM == true){
              </tbody>
            </Table>
            {(this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && this.state.registeredDesigns && !this.state.manager && this.state.designVoted) && (<form >
-           <label>
+           <label id="writtenText">
           Select design vote:
           <Select className="selectReact" onChange={this.voteSelection} defaultValue={ {value: '1', label: 'Select design vote:'} } options = {options1} />
      </label>
@@ -2020,7 +2021,7 @@ if(this.state.designSelectedM == true){
 
                 {/*player details*/}
                 { (this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && this.state.playerDetails) &&
-                  (<Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+                  (<Navbar bg="pri" expand="lg" fixed="top" variant="light">
                   <Navbar.Brand >Marketplace</Navbar.Brand>
                   <Nav className="mr-auto">
                   <Nav.Link href="#" onClick={this.toMainPd}>Home</Nav.Link>
@@ -2041,7 +2042,7 @@ if(this.state.designSelectedM == true){
 
 
                 {/*add printer*/}
-                {(this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && this.state.addPrinter) &&(<Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+                {(this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && this.state.addPrinter) &&(<Navbar bg="pri" expand="lg" fixed="top" variant="light">
                 <Navbar.Brand >Marketplace</Navbar.Brand>
                 <Nav className="mr-auto">
                 <Nav.Link href="#" onClick={this.toMainAD}>Home</Nav.Link>
@@ -2113,7 +2114,7 @@ if(this.state.designSelectedM == true){
 
 
                 {/*announce section*/}
-                {(this.state.ethBrowser && this.state.isLogged && this.state.announce && !this.state.loading && this.state.designer) &&(<Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+                {(this.state.ethBrowser && this.state.isLogged && this.state.announce && !this.state.loading && this.state.designer) &&(<Navbar bg="pri" expand="lg" fixed="top" variant="light">
                 <Navbar.Brand >Marketplace</Navbar.Brand>
                 <Nav className="mr-auto">
                 <Nav.Link href="#" onClick={this.toMainU}>Home</Nav.Link>
@@ -2188,7 +2189,7 @@ if(this.state.designSelectedM == true){
 
 
      {/*calculate result*/}
-     {(this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.designer && this.state.calculateResult && !this.state.manager) &&(<Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+     {(this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.designer && this.state.calculateResult && !this.state.manager) &&(<Navbar bg="pri" expand="lg" fixed="top" variant="light">
      <Navbar.Brand >Marketplace</Navbar.Brand>
      <Nav className="mr-auto">
      <Nav.Link href="#" onClick={this.toMainCR}>Home</Nav.Link>
@@ -2196,7 +2197,7 @@ if(this.state.designSelectedM == true){
      </Navbar>)}
      { (this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.designer && this.state.calculateResult && !this.state.manager) &&
          (<ul>
-           <Table className="table" striped bordered hover size="sm">
+           <Table className="table" bordered hover size="sm">
   <thead>
      <tr>
       <th>Design Number</th>
@@ -2223,7 +2224,7 @@ if(this.state.designSelectedM == true){
 
 
       {/*manager part*/}
-      {(this.state.ethBrowser && this.state.isLogged && this.state.main && !this.state.loading && this.state.player && this.state.manager) &&(<Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+      {(this.state.ethBrowser && this.state.isLogged && this.state.main && !this.state.loading && this.state.player && this.state.manager) &&(<Navbar bg="pri" expand="lg" fixed="top" variant="light">
       <Navbar.Brand >Marketplace</Navbar.Brand>
       <Nav className="mr-auto">
       <Nav.Link href="#" onClick={this.toCurrentDesignsM}>validate registered players</Nav.Link>
@@ -2233,7 +2234,7 @@ if(this.state.designSelectedM == true){
 
 
 
-      {(this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && (this.state.currentDesignsM || this.state.designSelectedM) && this.state.manager) &&(<Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+      {(this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && (this.state.currentDesignsM || this.state.designSelectedM) && this.state.manager) &&(<Navbar bg="pri" expand="lg" fixed="top" variant="light">
       <Navbar.Brand >Marketplace</Navbar.Brand>
       <Nav className="mr-auto">
       <Nav.Link href="#" onClick={this.toMainCM}>Home</Nav.Link>
@@ -2241,13 +2242,13 @@ if(this.state.designSelectedM == true){
       </Navbar>)}
       { (this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player && this.state.currentDesignsM && this.state.manager && !this.state.designSelectedM) &&
           (<ul>
-            <Table className="table" striped bordered hover size="sm">
+            <Table className="table" bordered hover size="sm">
    <thead>
       <tr>
        <th>Design Number</th>
        <th>creatorAddress</th>
        <th>design</th>
-       <th>avaibility</th>
+       <th>availability</th>
      </tr>
    </thead>
    <tbody>
@@ -2257,7 +2258,7 @@ if(this.state.designSelectedM == true){
         </ul>)}
     { (this.state.ethBrowser && this.state.isLogged && !this.state.loading && this.state.player  && this.state.manager && this.state.designSelectedM) &&
             (<ul>
-              <Table className="table" striped bordered hover size="sm">
+              <Table className="table" bordered hover size="sm">
      <thead>
         <tr>
          <th>Player Address</th>
