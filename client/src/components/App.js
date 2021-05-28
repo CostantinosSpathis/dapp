@@ -21,12 +21,11 @@ import Table from 'react-bootstrap/Table'
 import Card from 'react-bootstrap/Card'
 import logo from './ethereum-eth-logo.png';
 
-//connessione al nodo di infura per ipfs
+//connection to the infura node for ipfs
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
   let web3s = new Web3(new Web3.providers.WebsocketProvider('ws://localhost:7546'))
-//tipi di formato .stl (più comune) 3MF AMF e .obj(open source)
-// usa accept
+//format type .stl 3MF AMF e .obj(open source)
 // url example:'https://ipfs.infura.io/ipfs/QmZsdEtccredWWGZzZvU5fStsC7aWADJch588qAarGTky9'
 //{`https://ipfs.infura.io/ipfs/${this.state.designHash}`}
 //const user = []
@@ -56,7 +55,7 @@ const options4 = [
 class App extends Component {
 
 
-//operazioni quando il componente viene chiamato
+//operations when the component is called
   async componentWillMount() {
     await this.loadWeb3()
   if(this.state.ethBrowser == true) {
@@ -66,6 +65,7 @@ class App extends Component {
       await this.setState({loading : false})}
   }
   }
+  //cookies load
   async cookiesLog(){
     const isLogged = Cookies.get('log')
     const inMain = Cookies.get('main')
@@ -246,8 +246,8 @@ class App extends Component {
 
     }
   }
-
-
+//subscription to all events issued by the smart contract so that the front end listens and can capture any valuessent by the smart contract
+//the subscription takes place with the function this.state.contract1.events.eventName
 
   subscriptionEvents(){
     const delay = (ms) => new Promise(res => setTimeout(res, ms));
@@ -320,7 +320,7 @@ this.state.contract1.events.votingResult( function(error, event){ console.log("c
 }).on('changed', function(event){
 }).on('error', console.error);
   }
-//carico la finestra (metamask) web3 o la converto in web3
+//I replace the window.web3 API loaded by Metamask with a more updated one in order to update any changes in the user's account data
   async loadWeb3() {
    if (window.ethereum) {
       window.web3 = new Web3(window.ethereum)
@@ -338,11 +338,11 @@ this.state.contract1.events.votingResult( function(error, event){ console.log("c
       return
     }
   }
-// dati della blockchain:
-//account è l'indirizzo di colui che firma la transazione
-//networkid è l'id della connessione es:localhost:7545
-//contract è la variabile del contratto
-//designHash è l'hash del file salvato sull'ipfs
+// blockchain data:
+//account is the address of the person who signs the transaction
+//networkid is the connection id eg: localhost: 7545
+//contract is the contract variable
+//designHash is the hash of the file saved on the ipfs
   async loadBlockchainData() {
     const web3 = window.web3
     const accounts = await web3.eth.getAccounts()
@@ -360,9 +360,11 @@ this.state.contract1.events.votingResult( function(error, event){ console.log("c
       window.alert('Smart contract not deployed to detected network.')
     }
   }
+  //conversion of the hash file provided by IPFS into bytes32
   getBytes32FromIpfsHash(_ipfsListing) {
     return "0x"+bs58.decode(_ipfsListing).slice(2).toString('hex')
   }
+  //conversion from bytes32 to the IPFS hash format
   getIpfsHashFromBytes32(bytes32Hex) {
     const hashHex = "1220" + bytes32Hex.slice(2)
     const hashBytes = Buffer.from(hashHex, 'hex');
@@ -374,7 +376,8 @@ this.state.contract1.events.votingResult( function(error, event){ console.log("c
 
   constructor(props) {
     super(props)
-
+//the states are like global variables, this function declares all the states and sets their initial values
+//the value of a state is accessed through the function this.state.dataName
     this.state = {
       contract1: null,
       designHash: '',
@@ -460,7 +463,7 @@ this.state.contract1.events.votingResult( function(error, event){ console.log("c
     }
   }
 
-
+//functions needed to implement the countdown once a design is currently loaded the timer is only visible in the console
     timerCall() {
       this.timerID = setInterval(
         () => this.timer(),
@@ -482,30 +485,36 @@ async timer() {
 
 
 //login part
+//test function used to test the front end connection with Metamask may be eliminated in future implementations
 testMeta = (event) =>{
   event.preventDefault()
   const web3 = window.web3
   const try1 =  web3.eth.accounts.create();
  console.log(try1)
 }
+//Function that requires a reading of all data within the database
 startApi =  (event) =>{
   event.preventDefault()
   axios.get('http://127.0.0.1:5000/api/get1').then(response => {
   console.log(response.data)
 });
 }
+//login function
 startApi2 = async (event) =>{
   event.preventDefault()
   console.log("sending data")
+  //user data
   const username = this.state.username
   const password = this.state.password
   const hpassword = keccak256(password).toString('hex')
   const wallet = this.state.account
+  //check if wallet is the manager's wallet.
   if(wallet == "0x9Dd667c5d811C0930Ca639673EC269e1113f15bd") {
                                           console.log("manager setting")
                                           this.setState({manager: true})
                                           Cookies.set('manager','true')
                                         }
+  //database login request
   axios.post('http://127.0.0.1:5000/api/post1',{
     username : username,
     password : hpassword,
@@ -516,6 +525,7 @@ startApi2 = async (event) =>{
     const surname = response.data[0][4]
     const email = response.data[0][6]
     const registrationType = response.data[0][7]
+    //for all types of users, the statuses are changed to allow viewing of the components appropriate
     if(registrationType == "designer") {
       this.setState({designer : true})
       this.setState({player : false})
@@ -554,7 +564,7 @@ startApi2 = async (event) =>{
   }
 });
 }
-
+//management of the data entered by the user, each one is saved in a different state
 captureFileL = async (event)=> {
   event.preventDefault()
   console.log("charging username")
@@ -616,6 +626,7 @@ Return = async (event) => {
   console.log("register aborted")
   await this.setState({register : false})
 }
+//function that manages the recording
 sendData =  (event) => {
   event.preventDefault()
   const valid = this.state.invalidEmail
@@ -626,6 +637,7 @@ sendData =  (event) => {
   const confirmPassword = this.state.confirmPassword
   if(confirmPassword == password)
   {
+    //the password hash is sent
     const hpassword = keccak256(password).toString('hex')
     const wallet = this.state.account
     const email = this.state.email
@@ -633,6 +645,7 @@ sendData =  (event) => {
     const surname = this.state.surname
     const registrationType = this.state.registrationType
     console.log(wallet)
+//request to the server for the specific API for managing the registration
     axios.post('http://127.0.0.1:5000/api/post2',{
                username : username,
                password : hpassword,
@@ -654,11 +667,15 @@ sendData =  (event) => {
                                              const hash = keccak256(account);
                                              const fhash = '0x'+ hash
                                              console.log(hash)
+         //signature management via Metamask "0x" must be added to the account hash for the signature is compatible with Solidity
                                              await web3.eth.personal.sign(fhash, account ,(err,res) =>{
                                                                    if(res){
                                                                          console.log("signature:", res)
+         //test function to check the result of the signature in the console, if the signature is correct it should account value be shown
                                                                          web3.eth.personal.ecRecover(fhash, res).then(console.log)
+         //to be able to call a function of the smart contract you must use the function this.state.contract.methods.functionName
                                                                         this.state.contract.methods.addPlayer(fhash, res).send({from : account}).on('error', function(error){
+         //errors are the error messages sent by the smart contract if the invocation has not occurred with success                                                                 
                                                                           const string = error.message;
                                                                           const substring = "Player already added to the system.";
                                                                           const substring1 = "MetaMask Tx Signature: User denied transaction signature."
@@ -679,6 +696,7 @@ sendData =  (event) => {
                                             console.log("printer details")
                                             this.setState({printReg : true})
                                                                 }
+           //the operations for a user both are analogous to the player
                                      else if (registrationType == "both") {
                                             console.log("adding player phase (from both)")
                                             const web3 = window.web3
@@ -757,8 +775,12 @@ registrationType = async (selectedOption) => {
 }
 //end login part
 
+ //main part 
+  
+//all main functions respond to the user's choice to open a specific page in reality the page is always the same, the states are modified specifically 
+//to show the components necessary for the user to perform the specific function
 
-//main part
+//the components for a design's load page are loaded
 toUpload = async (event) =>{
   event.preventDefault()
   console.log("to Upload a design")
@@ -782,10 +804,12 @@ logoutM = async (event) => {
   await this.setState({main : false})
   console.log(this.state.isLogged)
 }
+//the components are loaded to see the list of designs available for voting
 toCurrentDesigns = async (event) =>{
   event.preventDefault()
   console.log("to current designs")
   this.timerCall()
+  //the design data is loaded from the smart contract via a get function
   this.state.contract.methods.getNumDesignes().call({from: this.state.account}).then( async (res) =>{
     var index = res.toString()
     Cookies.set('designIndex', index)
@@ -824,6 +848,7 @@ toCurrentDesigns = async (event) =>{
   })
 
 }
+//vengono caricati i componenti per la pagina di controllo dei parametri del player
 toPlayerDetails =  (event) =>{
   event.preventDefault()
   console.log("to Player details")
@@ -843,6 +868,7 @@ toPlayerDetails =  (event) =>{
     Cookies.set('playerDetails', 'true')
   })
 }
+//the components for the list of designs to which it is possible to vote are loaded
 toRegisteredDesigns = async (event) =>{
   event.preventDefault()
   console.log("to registered designs")
@@ -905,7 +931,7 @@ toRegisteredDesigns = async (event) =>{
   })
 
 }
-
+//the components for the page for the calculation of the result are loaded
 toCalculateResult = async (event) =>{
   event.preventDefault()
   console.log("to calculateResult")
@@ -943,6 +969,7 @@ toCalculateResult = async (event) =>{
   Cookies.set('calculateResult','true')
   Cookies.remove('main')
 }
+ //the components for a printer registration page are loaded
 toAddPrinter = async (event) =>{
   event.preventDefault()
   console.log("to add printer")
@@ -994,6 +1021,7 @@ refreshPd = (event) =>{
 
 
 //add printer
+//functions that save the data provided by the user in states
 printerAddress = async (event) => {
 console.log("charging printer address")
 const stri = event.target.value
@@ -1086,9 +1114,11 @@ toLoginAD = async (event) => {
   await this.setState({printReg : false})
   await this.setState({register : false})
 }
+//printer registration function
 sendDataPrinter = async (event) => {
   event.preventDefault()
   const web3 = window.web3
+  //all data is taken from the respective states
   console.log("sending printer details")
   const printerAddress = this.state.printerAddress
   console.log("printer address",printerAddress)
@@ -1160,6 +1190,7 @@ toMainC = async (event) => {
   await this.setState({main : true})
   Cookies.set('main','true')
 }
+//reload the design list
 refreshC = (event) =>{
   event.preventDefault()
   this.state.contract.methods.getNumDesignes().call({from: this.state.account}).then( async (res) =>{
@@ -1195,6 +1226,7 @@ refreshC = (event) =>{
   }
   })
 }
+//the number of the design chosen by the user is loaded on a status
 designSelected1 = (event) =>{
   event.preventDefault();
   const index = event.target.value
@@ -1204,6 +1236,7 @@ designSelected1 = (event) =>{
   this.setState({designSel : index})
   this.setState({designSelected : true})
 }
+//function that manages the sending of voting request data to the smart contract
 designSelected2 = (event) =>{
   event.preventDefault()
   const index =  this.state.designSel
@@ -1221,6 +1254,7 @@ designSelected2 = (event) =>{
                           const amount = web3.utils.toWei(amount1.toString(), 'ether');
                               console.log("signature:", res)
                               web3.eth.personal.ecRecover(fhash, res).then(console.log)
+                  //request to the smart contract to participate in the vote of a design
                              this.state.contract.methods.register(fhash, res, index, amount).send({from : account, value: amount}).on('error', function(error){
                                const string = error.message;
                                const substring1 = "The registration identity verification failed.";
@@ -1263,6 +1297,8 @@ toMainR = async (event) => {
   await this.setState({main : true})
   Cookies.set('main','true')
 }
+//this function obtains the design data, identified by index, chosen by the user, checks that
+//the time available to vote has not expired
 preCommit = async (event) =>{
   event.preventDefault();
   const index = event.target.value
@@ -1291,12 +1327,14 @@ voteSelection = async (selectedOption) =>{
   await this.setState({voteSelected : voteSelected})
   console.log("vote selected", this.state.voteSelected)
 }
+//function that manages the sending of the vote once a design has been selected
 commit = async (event) =>{
   event.preventDefault()
   const web3 = window.web3
   const nounce = Math.floor(Math.random() * 10000).toString()
   const hashNounce = keccak256(nounce)
   const fhashNounce = '0x'+hashNounce
+ //you get the vote sent by the user, this portion of code also checks that the user has actually voted
    var votingVariables = Cookies.get('votingVariables')
    console.log(votingVariables)
    if(votingVariables) votingVariables = JSON.parse(votingVariables)
@@ -1308,6 +1346,8 @@ commit = async (event) =>{
   const vote = this.state.voteSelected
   console.log("vote",vote)
   const string=vote+fhashNounce
+  //the hash performed by sha3 or keccak256 are equivalent in this case, both are maintained because in the 
+  //future one of the two systems may no longer be compatible with Solidity
   const cryptoCommitment = web3.utils.soliditySha3(vote, fhashNounce)
   const cryptoCommitment1 = keccak256(string)
   const fcryptoCommitment1 = '0x'+ cryptoCommitment
@@ -1348,6 +1388,7 @@ commit = async (event) =>{
  Cookies.set('votingVariables',votingVariables)
  this.setState({commited: true})
 }
+//after the vote has been sent and the time to vote has expired, the player can reveal their vote via the following function
 reveal = async (event) =>{
   event.preventDefault()
   console.log("reveal")
@@ -1381,6 +1422,7 @@ reveal = async (event) =>{
 
 
 //announce part
+//management of data entered by the user
 setCommit = (event, maskedvalue, floatvalue) => {
        this.setState({amount: floatvalue});
        console.log(floatvalue)
@@ -1436,6 +1478,7 @@ setReveal = (event) =>{
        console.log("format not selected")
      }
    }
+   //for greater compatibility with IPFS the file is seen as an array of bytes
     const reader = new window.FileReader()
     reader.readAsArrayBuffer(file)
     reader.onloadend = () => {
@@ -1459,7 +1502,7 @@ setReveal = (event) =>{
  }
   onSubmit = async (event) => {
     event.preventDefault()
-
+//the design file is uploaded to IPFS
     await ipfs.add(this.state.buffer, async (error, result)  => {
       console.log('Ipfs result', result)
       if(error) {
@@ -1530,6 +1573,8 @@ setReveal = (event) =>{
      console.log("expiry", deltaExp)
      const deltaReveal = (this.state.setReveal)*60
      console.log("reveal", deltaReveal)
+  //for now the manager is always the same for each design, in the future it will be necessary to change approach, 
+  //for example by developing a specific smart contract
      const manager = "0x9Dd667c5d811C0930Ca639673EC269e1113f15bd"
     console.log('start smart contract call')
     this.state.contract.methods.announce(fhash, currentTimeInSeconds, amount, manager, taur, taup, deltaExp, deltaReveal).send({from : this.state.account, value : amount }).on('transactionHash', function(hash){ console.log("Hash: " + hash);
@@ -1579,6 +1624,7 @@ toMainCR = async (event) => {
   await this.setState({main : true})
   Cookies.set('main','true')
 }
+//the result of the validation process is calculated, this function can be called only after all the players have voted
 calculateResult = (event) =>{
   event.preventDefault()
   console.log("calculating")
@@ -1671,6 +1717,7 @@ designSelected1M = (event) =>{
   Cookies.set('designSelectedM','true')
    this.setState({currentDesignsM : false})
    Cookies.remove('currentDesignsM')
+ //through this function, once a design is selected, the manager sees all the players subscribed to that design
      this.state.contract.methods.getRegPlayerAddresses(index).call({from: this.state.account}).then((r) =>{
       const result1=r
       console.log(result1)
@@ -1751,7 +1798,9 @@ if(this.state.designSelectedM == true){
 }
 //end manager part
 
-
+//the reader contains all the components, their management is identical to that of normal HTML components, the only difference is the conditional rendering; 
+//that is, it is possible to insert portions of JSX code as long as it is enclosed by curly brackets, in this way you can set conditions on when to show 
+//a certain component based on the value, usually true or false of a certain state
 
   render() {
     function expiryFormat(num) {
