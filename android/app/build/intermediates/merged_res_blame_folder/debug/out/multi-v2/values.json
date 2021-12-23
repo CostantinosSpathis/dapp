@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ubuntu/Android/test/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/ubuntu/Android/Backupp/Backup/Backup web3 android/new backup/tests (copy)/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/home/ubuntu/.gradle/caches/transforms-3/99c79909af811e582454611bbe366c33/transformed/jetified-react-native-0.66.3/res/values/values.xml",
@@ -56,42 +56,6 @@
                         "endLines": "156,1821,1968,1975,1980,1985,1992,2001,2743",
                         "endColumns": "67,12,59,12,12,12,12,12,24",
                         "endOffsets": "10607,123586,134578,134960,135240,135522,135906,136404,177016"
-                    }
-                },
-                {
-                    "source": "/home/ubuntu/Android/test/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "54",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "180"
-                    },
-                    "to": {
-                        "startLines": "380",
-                        "startColumns": "4",
-                        "startOffsets": "26564",
-                        "endLines": "382",
-                        "endColumns": "12",
-                        "endOffsets": "26690"
-                    }
-                },
-                {
-                    "source": "/home/ubuntu/Android/test/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
-                    "from": {
-                        "startLines": "6,8",
-                        "startColumns": "4,4",
-                        "startOffsets": "156,262",
-                        "endColumns": "63,68",
-                        "endOffsets": "215,326"
-                    },
-                    "to": {
-                        "startLines": "279,280",
-                        "startColumns": "4,4",
-                        "startOffsets": "17921,17985",
-                        "endColumns": "63,68",
-                        "endOffsets": "17980,18049"
                     }
                 },
                 {
@@ -205,6 +169,42 @@
                     }
                 },
                 {
+                    "source": "/home/ubuntu/Android/Backupp/Backup/Backup web3 android/new backup/tests (copy)/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "54",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "180"
+                    },
+                    "to": {
+                        "startLines": "380",
+                        "startColumns": "4",
+                        "startOffsets": "26564",
+                        "endLines": "382",
+                        "endColumns": "12",
+                        "endOffsets": "26690"
+                    }
+                },
+                {
+                    "source": "/home/ubuntu/Android/Backupp/Backup/Backup web3 android/new backup/tests (copy)/android/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "41",
+                        "endOffsets": "53"
+                    },
+                    "to": {
+                        "startLines": "310",
+                        "startColumns": "4",
+                        "startOffsets": "20063",
+                        "endColumns": "41",
+                        "endOffsets": "20100"
+                    }
+                },
+                {
                     "source": "/home/ubuntu/.gradle/caches/transforms-3/da58426860718cf7cd9b6432bdc1e74c/transformed/jetified-drawee-2.5.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,141",
@@ -224,20 +224,20 @@
                     }
                 },
                 {
-                    "source": "/home/ubuntu/Android/test/android/app/src/main/res/values/strings.xml",
+                    "source": "/home/ubuntu/Android/Backupp/Backup/Backup web3 android/new backup/tests (copy)/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
                     "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "41",
-                        "endOffsets": "53"
+                        "startLines": "6,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "156,262",
+                        "endColumns": "63,68",
+                        "endOffsets": "215,326"
                     },
                     "to": {
-                        "startLines": "310",
-                        "startColumns": "4",
-                        "startOffsets": "20063",
-                        "endColumns": "41",
-                        "endOffsets": "20100"
+                        "startLines": "279,280",
+                        "startColumns": "4,4",
+                        "startOffsets": "17921,17985",
+                        "endColumns": "63,68",
+                        "endOffsets": "17980,18049"
                     }
                 },
                 {
