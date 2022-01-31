@@ -1,5 +1,5 @@
 import React, { useEffect,useState,Component } from 'react';
-import Header from './shared/components/Header';
+//import Header from './shared/components/Header';
 import './App.css'
 import "core-js/stable";
 import "regenerator-runtime/runtime";
@@ -18,6 +18,10 @@ import Layout from './components/Layout'
 import AddPrinter from './components/AddPrinter';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
+import UploadDesign from './components/UploadDesign';
+import CalculateRes from './components/CalculateRes';
+import ListDesign from './components/ListDesign';
+import VoteDesign from './components/VoteDesign';
 function App(){
 
 
@@ -91,6 +95,10 @@ return(
                   <Route path="AddPrinter" element={<AddPrinter />}/>
                   <Route path="Signin" element={<Signin />}/>
                   <Route path="Signup" element={<Signup account={currentaccount}/>}/>
+                  <Route path ="UploadDesign" element={<UploadDesign />}/>
+                  <Route path="CalculateRes" element={<CalculateRes />}/>
+                  <Route path="ListDesign" element={<listDesign />}/>
+                  <Route path="VoteDesign" element={<VoteDesign />}/>
                   </Route>
               </Routes>
           </BrowserRouter>

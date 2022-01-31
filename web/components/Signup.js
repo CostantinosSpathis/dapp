@@ -28,6 +28,10 @@ class Signup extends React.Component{
         }
     }
 
+count = async (event) =>{
+    //count player
+}
+
 
  loadAccount = async (event)=> {
     const web3 = window.web3

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Navbar from 'react-bootstrap/Navbar';
 
 const Layout = ({ account }) => {
   return (
@@ -24,6 +26,14 @@ const Layout = ({ account }) => {
           <Button variant="secondary">
             <Link to="/Signin">Login</Link>
           </Button>
+          <NavDropdown title="My designs" id ="basic-nav-dropdown">
+            <NavDropdown.Item href="/UploadDesign">Upload a design</NavDropdown.Item>
+            <NavDropdown.Item href="/CalculateRes">Calculate Result</NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="Designs" id ="basic-nav-dropdown">
+            <NavDropdown.Item href="/ListDesign">List available design to vote</NavDropdown.Item>
+            <NavDropdown.Item href="/VoteDesign">Vote registered design</NavDropdown.Item>
+          </NavDropdown>
         //</ul>
         </div>
       </nav>
