@@ -25,6 +25,7 @@ class Signup extends React.Component{
             name : '',
             account: null,
             surname : '',
+            enabledCheckBox: false,
         }
     }
 
@@ -32,6 +33,24 @@ count = async (event) =>{
     //count player
 }
 
+onClick = () => {
+    this.setState({ enabledCheckBox: !this.state.enabledCheckBox });
+  };
+
+changeUser = async (event)=> {
+    event.preventDefault()
+    console.log("charging username");
+    const stri = event.target.value
+    await this.setState({username : stri})
+    console.log(this.state.username)
+}
+
+  test = () => {
+    const username = this.state.username;
+    console.log("user",username)
+    const maker = this.state.enabledCheckBox;
+    console.log("maker",maker)
+  };
 
  loadAccount = async (event)=> {
     const web3 = window.web3
@@ -75,12 +94,18 @@ count = async (event) =>{
   }
     render(){
     return(
-    <div>
+    <div className="container">
+        <div className='login'>
     <h1>Register</h1>
     <form>
-    <p><input type="text" placeholder="Username" /></p>
+    <p><input type="text" placeholder="Username" onChange={this.changeUser} /></p>
+    Vuoi creare un account Maker?
+    <input type="checkbox" defaultChecked={this.state.enabledCheckBox} onChange={this.onClick} />
+
+
     </form>
-             <Button variant="secondary" onClick={this.loadAccount}>Click</Button>
+             <Button variant="secondary" onClick={this.test}>Sign In</Button>
+    </div>
     </div>
 
    )

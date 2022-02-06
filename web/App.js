@@ -22,6 +22,12 @@ import UploadDesign from './components/UploadDesign';
 import CalculateRes from './components/CalculateRes';
 import ListDesign from './components/ListDesign';
 import VoteDesign from './components/VoteDesign';
+import MyPrinters from './components/MyPrinters';
+import MyOrder from './components/MyOrder';
+import Announce from './components/Announce';
+import MyVotes from './components/MyVotes';
+import BuyToken from './components/BuyToken';
+
 function App(){
 
 
@@ -77,15 +83,9 @@ if(loader){
     return <div>loading...</div>
 }
 
-//PAGES
-const goHome = async ()=>{
-return(
-<Home />
-)
-
-}
 
 return(
+    <div>
 <div>
           <BrowserRouter>
               <Routes>
@@ -99,10 +99,17 @@ return(
                   <Route path="CalculateRes" element={<CalculateRes />}/>
                   <Route path="ListDesign" element={<listDesign />}/>
                   <Route path="VoteDesign" element={<VoteDesign />}/>
+                  <Route path="MyPrinters" element={<MyPrinters />}/>
+                  <Route path="MyOrder" element={<MyOrder />}/>
+                  <Route path="Announce" element={<Announce />}/>
+                  <Route path="MyVotes" element={<MyVotes />}/>
+                  <Route path="AddPrinter" element={<AddPrinter />}/>
+                  <Route path="BuyToken" element={<BuyToken />}/>
                   </Route>
               </Routes>
           </BrowserRouter>
 
+</div>
 </div>
     );
 

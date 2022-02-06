@@ -22,31 +22,62 @@ class AddPrinter extends React.Component {
         super(props)
         this.state = {
         addPrinter: false,
-              printerBrand: '',
               printerName:'',
               printerStrength:'3',
               printerFlexibility:'3',
               printerDurability:'3',
               printerDifficulty:'3',
               printTemperature:'',
+              printNozzles:'',
               bedTemperature:'',
               solubleSupport:true,
               foodSafety:true,
               printerAddress:'',
               printReg:false,
+              enabledCheckBox: false,
+              ABS: false,
+              PETG:false,
         }
     }
 
+    onClickPLA = () => {
+      this.setState({ enabledCheckBox: !this.state.enabledCheckBox });
+    };
+
+    onClickABS = () => {
+      this.setState({ ABS: !this.state.ABS });
+    };
+
+    onClickPETG = () => {
+      this.setState({ PETG: !this.state.PETG });
+    };
+
+    changeNamePrinter = async (event)=> {
+      event.preventDefault()
+      const stri = event.target.value
+      await this.setState({printerName : stri})
+      console.log(this.state.printerName)
+  }
+
+ 
+  changeAddressPrinter = async (event)=> {
+    event.preventDefault()
+    const stri = event.target.value
+    await this.setState({printerAddress : stri})
+    console.log(this.state.printerAddress)
+}
+  
 sendDataPrinter = async (event) => {
   event.preventDefault()
-  //const web3 = window.web3
-  //all data is taken from the respective states
-  console.log("sending printer details")
+  const printerName = this.state.printerName
+  console.log("printer name",printerName)
   const printerAddress = this.state.printerAddress
   console.log("printer address",printerAddress)
-  const printerBrand = this.state.printerBrand
-  console.log("printer brand",printerBrand)
-  const abc = web3.utils.asciiToHex(printerBrand)
+  //const web3 = window.web3
+  //all data is taken from the respective states
+  /*
+  console.log("sending printer details")
+  
   var printerBrandCoded = web3.utils.stringToHex(printerBrand)
   console.log("printer brand coded",printerBrandCoded)
   printerBrandCoded = web3.utils.padRight(printerBrandCoded, 64)
@@ -76,6 +107,15 @@ sendDataPrinter = async (event) => {
   console.log("soluble support",solubleSupport)
   const foodSafety = this.state.foodSafety
   console.log("food safety",foodSafety)
+  */
+  const  enabledCheckBox= this.state.enabledCheckBox
+  console.log("PLA",enabledCheckBox)
+
+  const ABS = this.state.ABS
+  console.log("ABS",ABS)
+
+  const PETG = this.state.PETG
+  console.log("PETG",PETG)
   /*
   if(printerAddress && printerBrand && printerName && printTemperature && bedTemperature ){
   this.state.contract.methods.addPrinter(printerAddress, printerBrandCoded, printerNameCoded, printerStrength, printerFlexibility, printerDurability, printerDifficulty, printTemperature, bedTemperature, solubleSupport, foodSafety).send({from : this.state.account }).on('error', function(error){
@@ -98,13 +138,32 @@ sendDataPrinter = async (event) => {
         function printTemperatureFormat(num){
         return num + 'Celsius';
         }
+
+        function printNozzleFormat(numm){
+          return numm +'mm';
+        }
+
     return(
-    <div>
+    <div className='container'>
     <h1>AddPrinter</h1>
-        <div className="container">
-        <p><input type="text" placeholder="Printer address" onChange={this.printerAddress}/></p>
-        <p><input type="text" placeholder="Printer Brand" onChange={this.printerBrand}/></p>
-        <p><input type="text" placeholder="Printer Name" onChange={this.printerName}/></p>
+        <div className="login">
+        <p><input type="text" placeholder="Printer address" onChange={this.changeAddressPrinter}/></p>
+        <p><input type="text" placeholder="Printer Name" onChange={this.changeNamePrinter}/></p>
+        
+        <label>
+          SELECT SUPPORTED MATERIAL <br />
+          PLA
+        <input type="checkbox" defaultChecked={this.state.enabledCheckBox} onChange={this.onClickPLA} />
+        ABS
+        <input type="checkbox" defaultChecked={this.state.ABS} onChange={this.onClickABS} />
+        PETG
+        <input type="checkbox" defaultChecked={this.state.PETG} onChange={this.onClickPETG} />
+        </label>
+
+        <form>
+        <NumericInput placeholder="printNozzles" min={0.1} step={0.1} format={printNozzleFormat} mobile="auto" onChange={this.printNozzles}/>
+        </form>
+
         <label>
             <Select className="selectReact1" onChange = {this.printerStrength} defaultValue={{value: '3', label: "Select printer strenght"}}options={printerRange}/>
         </label>

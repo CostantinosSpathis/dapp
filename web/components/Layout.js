@@ -7,36 +7,33 @@ import Navbar from 'react-bootstrap/Navbar';
 const Layout = ({ account }) => {
   return (
     <>
-      <nav className="navbar navbar-dark bg-dark shadow mb-5">
-      <div nav className="nav-left">
-        //<ul>
+<div className='container'>
+    <Navbar bg="pri" fixed="top" variant="light">
+
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <li className="nav-item text-white">{account}</li>
-          <Button variant="secondary">
+          <Button className='button'>
             <Link to="/">Home</Link>
           </Button>
-          <Button variant ="secondary">
-            <Link to="/PlayerDetails">PlayerDetails</Link>
+          <NavDropdown title="Printers" id="basic-nav-dropdown">
+            <NavDropdown.Item href="/AddPrinter">AddPrinters</NavDropdown.Item>
+            <NavDropdown.Item href="/MyPrinters">My Printers</NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title=" Design" id="basic-nav-dropdown">
+            <NavDropdown.Item href="/MyOrder">MyOrder</NavDropdown.Item>
+            <NavDropdown.Item href="/Announce">Announce new Design</NavDropdown.Item>
+            <NavDropdown.Item href="/VoteDesign">Vote Design</NavDropdown.Item>
+            <NavDropdown.Item href="/MyVotes">My Votes</NavDropdown.Item>
+          </NavDropdown>
+          <Button className='button'>
+          <Link to="/BuyToken">Af2-Saldo</Link>
           </Button>
-          <Button variant="secondary">
-            <Link to="/AddPrinter">AddPrinter</Link>
-          </Button>
-          <Button variant ="secondary">
+          <Button className ="button">
           <Link to="/Signup">Signup</Link>
           </Button>
-          <Button variant="secondary">
-            <Link to="/Signin">Login</Link>
-          </Button>
-          <NavDropdown title="My designs" id ="basic-nav-dropdown">
-            <NavDropdown.Item href="/UploadDesign">Upload a design</NavDropdown.Item>
-            <NavDropdown.Item href="/CalculateRes">Calculate Result</NavDropdown.Item>
-          </NavDropdown>
-          <NavDropdown title="Designs" id ="basic-nav-dropdown">
-            <NavDropdown.Item href="/ListDesign">List available design to vote</NavDropdown.Item>
-            <NavDropdown.Item href="/VoteDesign">Vote registered design</NavDropdown.Item>
-          </NavDropdown>
-        //</ul>
         </div>
-      </nav>
+        </Navbar>
+</div>
 
       <Outlet />
     </>
