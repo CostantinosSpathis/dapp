@@ -42210,12 +42210,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x1e96705d4823D6e3dAfe91781f238e2cd86F9E8f",
-      "transactionHash": "0x6c31498847fdd78a538d70eb34125f91389e3db6a14eb9f6d87c22a300d5f0ee"
+      "address": "0x3055e333cd3Fe44Ffd31b05e20B6F82Cf00088cE",
+      "transactionHash": "0x19ef1d7bc2e79cd9d421029d8029c16ed98d7b6cb38be6b49b4bc70022035cdb"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-02-06T16:21:31.190Z",
+  "updatedAt": "2022-02-24T16:04:06.351Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

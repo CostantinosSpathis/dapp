@@ -20,10 +20,14 @@ const Layout = ({ account }) => {
             <NavDropdown.Item href="/MyPrinters">My Printers</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title=" Design" id="basic-nav-dropdown">
-            <NavDropdown.Item href="/MyOrder">MyOrder</NavDropdown.Item>
+            <NavDropdown.Item href="/MyDesign">MyDesign</NavDropdown.Item>
             <NavDropdown.Item href="/Announce">Announce new Design</NavDropdown.Item>
             <NavDropdown.Item href="/VoteDesign">Vote Design</NavDropdown.Item>
             <NavDropdown.Item href="/MyVotes">My Votes</NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="Orders" id="basic-nav-dropdown">
+          <NavDropdown.Item href="/NewOrder">NewOrder</NavDropdown.Item>
+          <NavDropdown.Item href="/MyOrder">MyOrder</NavDropdown.Item>
           </NavDropdown>
           <Button className='button'>
           <Link to="/BuyToken">Af2-Saldo</Link>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
-import PlayerDetails from './PlayerDetails';
 const navbar= ({ account }) =>{
 
   return (

@@ -1,15 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-class CalculateRes extends React.Component{
-
-
-render(){
-    return(
-    <div>
-    <h1>CalculateResult</h1>
-    </div>
-
-    )
+const CalculateRes = () => {
+  return (
+    <div>CalculateRes</div>
+  )
 }
-}
-export default CalculateRes;
+
+export default CalculateRes
