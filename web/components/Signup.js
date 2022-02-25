@@ -4,6 +4,7 @@ import { keccak256 } from 'js-sha3';
 import App from '../App';
 import Web3 from 'web3';
 import Button from 'react-bootstrap/Button';
+import Maps from './Maps';
 
 
 
@@ -66,6 +67,7 @@ changeUser = async (event)=> {
     </form>
              <Button variant="secondary" onClick={this.test}>Sign In</Button>
     </div>
+    <Maps />
     </div>
 
    )

@@ -35,6 +35,9 @@ const Layout = ({ account }) => {
           <Button className ="button">
           <Link to="/Signup">Signup</Link>
           </Button>
+          <Button className ="button">
+          <Link to="/Maps">Maps</Link>
+          </Button>
         </div>
         </Navbar>
 </div>

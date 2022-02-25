@@ -13,17 +13,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import designVoting from './blockchain/src/abis/designVoting.json'
 //IMPORT PAGES
 import Home from './components/Home'
+//IMPORT NAVBAR
 import Layout from './components/Layout'
-
+//IMPORT AUTH COMPONENT
 import Signin from './components/Signin';
 import Signup from './components/Signup';
-import UploadDesign from './components/UploadDesign';
-import CalculateRes from './components/CalculateRes';
-import ListDesign from './components/ListDesign';
 //IMPORT PRINTER PAGES
 import AddPrinter from './pages/printers/AddPrinter';
 import MyPrinters from './pages/printers/MyPrinters';
-
 // IMPORT DESIGN PAGES
 import Announce from './pages/Design/Announce';
 import MyDesign from './pages/Design/MyDesign';
@@ -33,10 +30,10 @@ import VoteDesign from './pages/Design/VoteDesign';
 import NewOrder from './pages/Orders/NewOrder';
 import MyOrder from './pages/Orders/MyOrder';
 
-
-
 import BuyToken from './pages/BuyToken';
 
+//IMPORT MAPS FOR TESTS DELETE AFTER COMPLETE
+import Maps from './components/Maps';
 
 
 function App(){
@@ -105,9 +102,6 @@ return(
                   <Route path="AddPrinter" element={<AddPrinter />}/>
                   <Route path="Signin" element={<Signin />}/>
                   <Route path="Signup" element={<Signup account={currentaccount}/>}/>
-                  <Route path ="UploadDesign" element={<UploadDesign />}/>
-                  <Route path="CalculateRes" element={<CalculateRes />}/>
-                  <Route path="ListDesign" element={<ListDesign />}/>
                   <Route path="VoteDesign" element={<VoteDesign />}/>
                   <Route path="MyPrinters" element={<MyPrinters />}/>
                   <Route path="MyOrder" element={<MyOrder />}/>
@@ -117,6 +111,7 @@ return(
                   <Route path="BuyToken" element={<BuyToken />}/>
                   <Route path="MyDesign" element={<MyDesign />}/>
                   <Route path="NewOrder" element={<NewOrder />}/>
+                  <Route path="Maps" element={<Maps />}/>
                   </Route>
               </Routes>
           </BrowserRouter>
