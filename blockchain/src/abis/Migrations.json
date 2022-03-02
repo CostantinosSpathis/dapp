@@ -50,7 +50,7 @@
   "sourceMap": "66:352:0:-:0;;;113:10;90:33;;;;;;;;;;;;;;;;;;;;66:352;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "66:352:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;127:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;90:33;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;313:103;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;127:36;;;;:::o;90:33::-;;;;;;;;;;;;:::o;313:103::-;225:5;;;;;;;;;;211:19;;:10;:19;;;196:101;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;402:9:::1;375:24;:36;;;;313:103:::0;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract Migrations {\n  address public owner = msg.sender;\n  uint public last_completed_migration;\n\n  modifier restricted() {\n    require(\n      msg.sender == owner,\n      \"This function is restricted to the contract's owner\"\n    );\n    _;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n}\n",
-  "sourcePath": "/home/ubuntu/Android/progetto/blockchain/contracts/Migrations.sol",
+  "sourcePath": "/home/ubuntu/Android/af-2/web/blockchain/contracts/Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -942,12 +942,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x4BF45af09584Ce210A2aB22f42236d08bF0B328D",
-      "transactionHash": "0x1cd12406d6c65b3d2f2200d8ebf29981838f18629684dc1cf8b74d40cc919866"
+      "address": "0x57862353cb107aD7Df5a3Ef858A6A5AffC255e6a",
+      "transactionHash": "0x432103ca0342929d72be517656a297746cad003d3d2cbc672211b3a691299331"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-02-24T16:04:06.381Z",
+  "updatedAt": "2022-03-02T10:17:10.469Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
