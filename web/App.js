@@ -34,6 +34,10 @@ import BuyToken from './pages/BuyToken';
 //IMPORT MAPS FOR TESTS DELETE AFTER COMPLETE
 import Maps from './components/Maps';
 
+//IMPORT PAGE MODIFY MATERIALS
+import ModifyMat from './pages/ModifyMat';
+
+
 
 function App(){
 
@@ -92,7 +96,7 @@ if(loader){
 
 
 return(
-    <div>
+    <div> 
 <div>
           <BrowserRouter>
               <Routes>
@@ -111,6 +115,7 @@ return(
                   <Route path="MyDesign" element={<MyDesign />}/>
                   <Route path="NewOrder" element={<NewOrder />}/>
                   <Route path="Maps" element={<Maps />}/>
+                  <Route path="ModifyMat" element={<ModifyMat />}/>
                   </Route>
               </Routes>
           </BrowserRouter>

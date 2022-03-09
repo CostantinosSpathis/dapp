@@ -27,6 +27,8 @@ class Signup extends React.Component{
             account: null,
             surname : '',
             enabledCheckBox: false,
+            dalleore: null,
+            alleore: null
             
         }
         this.contract= new IUser()
@@ -55,6 +57,17 @@ changeUser = async (event)=> {
   };
 
     render(){
+        let box
+        if(this.state.enabledCheckBox){
+            box = <div>
+                Dalle ore:
+                <input type="time" min="00" max="24" onChange={this.state.dalleore}></input>< br/>
+                Alle ore:
+                <input type="time" min="00" max="24" onChange={this.state.alleore}></input>
+            </div>
+        }else{
+            box=<div></div>
+        }
     return(
     <div className="container">
         <div className='login'>
@@ -63,8 +76,7 @@ changeUser = async (event)=> {
     <p><input type="text" placeholder="Username" onChange={this.changeUser} /></p>
     Vuoi creare un account Maker?
     <input type="checkbox" defaultChecked={this.state.enabledCheckBox} onChange={this.onClick} />
-
-
+        {box}
     </form>
              <Button variant="secondary" onClick={this.test}>Sign In</Button>
     </div>

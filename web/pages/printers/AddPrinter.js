@@ -4,6 +4,7 @@ import NumericInput from 'react-numeric-input';
 import Select from 'react-select';
 import Button from 'react-bootstrap/Button';
 //import Scheduling from '../blockchain/src/abis/Scheduling.json'
+import OnBoardin from '../../contract/abiclasses/OnBoard';
 
 const printerRange = [
   { value: '3', label: 'very high' },
@@ -24,6 +25,7 @@ class AddPrinter extends React.Component {
         super(props)
         this.state = {
         addPrinter: false,
+        account: null,
               printerName:'',
               contract: null,
               printerStrength:'3',
@@ -51,6 +53,7 @@ class AddPrinter extends React.Component {
               noz8:false,
               noz9:false,
         }
+        this.contract = new OnBoardin()
     }
     
 
@@ -124,18 +127,12 @@ class AddPrinter extends React.Component {
 
 sendDataPrinter = async (event) => {
   event.preventDefault()
-  interaction();
-  const value = interaction()
-  console.log(value)
-
 
   const printerName = this.state.printerName
-  console.log("printer name",printerName)
+
   const printerAddress = this.state.printerAddress
-  console.log("printer address",printerAddress)
 
   const  enabledCheckBox= this.state.enabledCheckBox
-  console.log("PLA",enabledCheckBox)
 
   const ABS = this.state.ABS
   console.log("ABS",ABS)
@@ -172,22 +169,9 @@ sendDataPrinter = async (event) => {
 
   const noz9 = this.state.noz9
   console.log("noz9",noz9)
-  /*
-  if(printerName){
-  Schedul.methods.addPrinter(printerName).send({from : this.state.printerName }).on('error', function(error){
-                        console.log(error);
-                        const string = error.message
-                        const substring = "MetaMask Tx Signature: User denied transaction signature.";
-                        const substring1 = "Only registered player can add a printer.";
-                        interaction();
-                        if(string){
-                        if(string.includes(substring)) console.log(substring);
-                        if(string.includes(substring1)) console.log(substring1);}
-                               return})}
- else {
-   console.log("missing input")
-   return
- }*/
+
+  await this.contract.registerPrinter(printerAddress);
+  
 }
 
   render() {
