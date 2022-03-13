@@ -1,0 +1,503 @@
+{
+  "contractName": "EnumType",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/EnumType.sol\":\"EnumType\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/EnumType.sol\":{\"keccak256\":\"0xeda8afc26b6753e72ae696a21dc747c6423be780a4d90482793e05f4d265ab54\",\"urls\":[\"bzz-raw://46a2c1adfbabf52cbc60aee19227e6c5c0b0bfbb97c38800b0be309426934e70\",\"dweb:/ipfs/QmRvwZuAtQHrT3SpqmCjJ3aqFv3SwfZNZ2Lvwz25VnwMyY\"]}},\"version\":1}",
+  "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212209154a45cd569957cde303792db281a7342772dad9caae8da2a084b2c6b13864064736f6c63430008070033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212209154a45cd569957cde303792db281a7342772dad9caae8da2a084b2c6b13864064736f6c63430008070033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "0:292:13:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;0:292:13;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "0:292:13:-:0;;;;;;;;",
+  "source": "library EnumType{\n    \n    enum votingState{none,first,second}\n    enum revealVote{noReveal,reveal}\n    enum playerType{ MAKER, CALLER }\n    enum materialType  { ABS, PLA, PETG }\n    enum materialColor { NONE, BLACK, WHITE, BROWN, GRAY, YELLOW, ORANGE, RED, PINK, PURPLE, BLU, GREEN }\n\n    \n}\n     \n",
+  "sourcePath": "/Users/antoniopipitone/Desktop/Air Factories 2.0/af2-smart-contract/contracts/EnumType.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/EnumType.sol",
+    "exportedSymbols": {
+      "EnumType": [
+        3652
+      ]
+    },
+    "id": 3653,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 3652,
+        "linearizedBaseContracts": [
+          3652
+        ],
+        "name": "EnumType",
+        "nameLocation": "8:8:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "EnumType.votingState",
+            "id": 3628,
+            "members": [
+              {
+                "id": 3625,
+                "name": "none",
+                "nameLocation": "44:4:13",
+                "nodeType": "EnumValue",
+                "src": "44:4:13"
+              },
+              {
+                "id": 3626,
+                "name": "first",
+                "nameLocation": "49:5:13",
+                "nodeType": "EnumValue",
+                "src": "49:5:13"
+              },
+              {
+                "id": 3627,
+                "name": "second",
+                "nameLocation": "55:6:13",
+                "nodeType": "EnumValue",
+                "src": "55:6:13"
+              }
+            ],
+            "name": "votingState",
+            "nameLocation": "32:11:13",
+            "nodeType": "EnumDefinition",
+            "src": "27:35:13"
+          },
+          {
+            "canonicalName": "EnumType.revealVote",
+            "id": 3631,
+            "members": [
+              {
+                "id": 3629,
+                "name": "noReveal",
+                "nameLocation": "83:8:13",
+                "nodeType": "EnumValue",
+                "src": "83:8:13"
+              },
+              {
+                "id": 3630,
+                "name": "reveal",
+                "nameLocation": "92:6:13",
+                "nodeType": "EnumValue",
+                "src": "92:6:13"
+              }
+            ],
+            "name": "revealVote",
+            "nameLocation": "72:10:13",
+            "nodeType": "EnumDefinition",
+            "src": "67:32:13"
+          },
+          {
+            "canonicalName": "EnumType.playerType",
+            "id": 3634,
+            "members": [
+              {
+                "id": 3632,
+                "name": "MAKER",
+                "nameLocation": "121:5:13",
+                "nodeType": "EnumValue",
+                "src": "121:5:13"
+              },
+              {
+                "id": 3633,
+                "name": "CALLER",
+                "nameLocation": "128:6:13",
+                "nodeType": "EnumValue",
+                "src": "128:6:13"
+              }
+            ],
+            "name": "playerType",
+            "nameLocation": "109:10:13",
+            "nodeType": "EnumDefinition",
+            "src": "104:32:13"
+          },
+          {
+            "canonicalName": "EnumType.materialType",
+            "id": 3638,
+            "members": [
+              {
+                "id": 3635,
+                "name": "ABS",
+                "nameLocation": "162:3:13",
+                "nodeType": "EnumValue",
+                "src": "162:3:13"
+              },
+              {
+                "id": 3636,
+                "name": "PLA",
+                "nameLocation": "167:3:13",
+                "nodeType": "EnumValue",
+                "src": "167:3:13"
+              },
+              {
+                "id": 3637,
+                "name": "PETG",
+                "nameLocation": "172:4:13",
+                "nodeType": "EnumValue",
+                "src": "172:4:13"
+              }
+            ],
+            "name": "materialType",
+            "nameLocation": "146:12:13",
+            "nodeType": "EnumDefinition",
+            "src": "141:37:13"
+          },
+          {
+            "canonicalName": "EnumType.materialColor",
+            "id": 3651,
+            "members": [
+              {
+                "id": 3639,
+                "name": "NONE",
+                "nameLocation": "204:4:13",
+                "nodeType": "EnumValue",
+                "src": "204:4:13"
+              },
+              {
+                "id": 3640,
+                "name": "BLACK",
+                "nameLocation": "210:5:13",
+                "nodeType": "EnumValue",
+                "src": "210:5:13"
+              },
+              {
+                "id": 3641,
+                "name": "WHITE",
+                "nameLocation": "217:5:13",
+                "nodeType": "EnumValue",
+                "src": "217:5:13"
+              },
+              {
+                "id": 3642,
+                "name": "BROWN",
+                "nameLocation": "224:5:13",
+                "nodeType": "EnumValue",
+                "src": "224:5:13"
+              },
+              {
+                "id": 3643,
+                "name": "GRAY",
+                "nameLocation": "231:4:13",
+                "nodeType": "EnumValue",
+                "src": "231:4:13"
+              },
+              {
+                "id": 3644,
+                "name": "YELLOW",
+                "nameLocation": "237:6:13",
+                "nodeType": "EnumValue",
+                "src": "237:6:13"
+              },
+              {
+                "id": 3645,
+                "name": "ORANGE",
+                "nameLocation": "245:6:13",
+                "nodeType": "EnumValue",
+                "src": "245:6:13"
+              },
+              {
+                "id": 3646,
+                "name": "RED",
+                "nameLocation": "253:3:13",
+                "nodeType": "EnumValue",
+                "src": "253:3:13"
+              },
+              {
+                "id": 3647,
+                "name": "PINK",
+                "nameLocation": "258:4:13",
+                "nodeType": "EnumValue",
+                "src": "258:4:13"
+              },
+              {
+                "id": 3648,
+                "name": "PURPLE",
+                "nameLocation": "264:6:13",
+                "nodeType": "EnumValue",
+                "src": "264:6:13"
+              },
+              {
+                "id": 3649,
+                "name": "BLU",
+                "nameLocation": "272:3:13",
+                "nodeType": "EnumValue",
+                "src": "272:3:13"
+              },
+              {
+                "id": 3650,
+                "name": "GREEN",
+                "nameLocation": "277:5:13",
+                "nodeType": "EnumValue",
+                "src": "277:5:13"
+              }
+            ],
+            "name": "materialColor",
+            "nameLocation": "188:13:13",
+            "nodeType": "EnumDefinition",
+            "src": "183:101:13"
+          }
+        ],
+        "scope": 3653,
+        "src": "0:292:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:299:13"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/EnumType.sol",
+    "exportedSymbols": {
+      "EnumType": [
+        3652
+      ]
+    },
+    "id": 3653,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 3652,
+        "linearizedBaseContracts": [
+          3652
+        ],
+        "name": "EnumType",
+        "nameLocation": "8:8:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "EnumType.votingState",
+            "id": 3628,
+            "members": [
+              {
+                "id": 3625,
+                "name": "none",
+                "nameLocation": "44:4:13",
+                "nodeType": "EnumValue",
+                "src": "44:4:13"
+              },
+              {
+                "id": 3626,
+                "name": "first",
+                "nameLocation": "49:5:13",
+                "nodeType": "EnumValue",
+                "src": "49:5:13"
+              },
+              {
+                "id": 3627,
+                "name": "second",
+                "nameLocation": "55:6:13",
+                "nodeType": "EnumValue",
+                "src": "55:6:13"
+              }
+            ],
+            "name": "votingState",
+            "nameLocation": "32:11:13",
+            "nodeType": "EnumDefinition",
+            "src": "27:35:13"
+          },
+          {
+            "canonicalName": "EnumType.revealVote",
+            "id": 3631,
+            "members": [
+              {
+                "id": 3629,
+                "name": "noReveal",
+                "nameLocation": "83:8:13",
+                "nodeType": "EnumValue",
+                "src": "83:8:13"
+              },
+              {
+                "id": 3630,
+                "name": "reveal",
+                "nameLocation": "92:6:13",
+                "nodeType": "EnumValue",
+                "src": "92:6:13"
+              }
+            ],
+            "name": "revealVote",
+            "nameLocation": "72:10:13",
+            "nodeType": "EnumDefinition",
+            "src": "67:32:13"
+          },
+          {
+            "canonicalName": "EnumType.playerType",
+            "id": 3634,
+            "members": [
+              {
+                "id": 3632,
+                "name": "MAKER",
+                "nameLocation": "121:5:13",
+                "nodeType": "EnumValue",
+                "src": "121:5:13"
+              },
+              {
+                "id": 3633,
+                "name": "CALLER",
+                "nameLocation": "128:6:13",
+                "nodeType": "EnumValue",
+                "src": "128:6:13"
+              }
+            ],
+            "name": "playerType",
+            "nameLocation": "109:10:13",
+            "nodeType": "EnumDefinition",
+            "src": "104:32:13"
+          },
+          {
+            "canonicalName": "EnumType.materialType",
+            "id": 3638,
+            "members": [
+              {
+                "id": 3635,
+                "name": "ABS",
+                "nameLocation": "162:3:13",
+                "nodeType": "EnumValue",
+                "src": "162:3:13"
+              },
+              {
+                "id": 3636,
+                "name": "PLA",
+                "nameLocation": "167:3:13",
+                "nodeType": "EnumValue",
+                "src": "167:3:13"
+              },
+              {
+                "id": 3637,
+                "name": "PETG",
+                "nameLocation": "172:4:13",
+                "nodeType": "EnumValue",
+                "src": "172:4:13"
+              }
+            ],
+            "name": "materialType",
+            "nameLocation": "146:12:13",
+            "nodeType": "EnumDefinition",
+            "src": "141:37:13"
+          },
+          {
+            "canonicalName": "EnumType.materialColor",
+            "id": 3651,
+            "members": [
+              {
+                "id": 3639,
+                "name": "NONE",
+                "nameLocation": "204:4:13",
+                "nodeType": "EnumValue",
+                "src": "204:4:13"
+              },
+              {
+                "id": 3640,
+                "name": "BLACK",
+                "nameLocation": "210:5:13",
+                "nodeType": "EnumValue",
+                "src": "210:5:13"
+              },
+              {
+                "id": 3641,
+                "name": "WHITE",
+                "nameLocation": "217:5:13",
+                "nodeType": "EnumValue",
+                "src": "217:5:13"
+              },
+              {
+                "id": 3642,
+                "name": "BROWN",
+                "nameLocation": "224:5:13",
+                "nodeType": "EnumValue",
+                "src": "224:5:13"
+              },
+              {
+                "id": 3643,
+                "name": "GRAY",
+                "nameLocation": "231:4:13",
+                "nodeType": "EnumValue",
+                "src": "231:4:13"
+              },
+              {
+                "id": 3644,
+                "name": "YELLOW",
+                "nameLocation": "237:6:13",
+                "nodeType": "EnumValue",
+                "src": "237:6:13"
+              },
+              {
+                "id": 3645,
+                "name": "ORANGE",
+                "nameLocation": "245:6:13",
+                "nodeType": "EnumValue",
+                "src": "245:6:13"
+              },
+              {
+                "id": 3646,
+                "name": "RED",
+                "nameLocation": "253:3:13",
+                "nodeType": "EnumValue",
+                "src": "253:3:13"
+              },
+              {
+                "id": 3647,
+                "name": "PINK",
+                "nameLocation": "258:4:13",
+                "nodeType": "EnumValue",
+                "src": "258:4:13"
+              },
+              {
+                "id": 3648,
+                "name": "PURPLE",
+                "nameLocation": "264:6:13",
+                "nodeType": "EnumValue",
+                "src": "264:6:13"
+              },
+              {
+                "id": 3649,
+                "name": "BLU",
+                "nameLocation": "272:3:13",
+                "nodeType": "EnumValue",
+                "src": "272:3:13"
+              },
+              {
+                "id": 3650,
+                "name": "GREEN",
+                "nameLocation": "277:5:13",
+                "nodeType": "EnumValue",
+                "src": "277:5:13"
+              }
+            ],
+            "name": "materialColor",
+            "nameLocation": "188:13:13",
+            "nodeType": "EnumDefinition",
+            "src": "183:101:13"
+          }
+        ],
+        "scope": 3653,
+        "src": "0:292:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:299:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-02-26T23:47:21.929Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

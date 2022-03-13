@@ -1,0 +1,1185 @@
+{
+  "contractName": "PlayerData",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/PlayerData.sol\":\"PlayerData\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/EnumType.sol\":{\"keccak256\":\"0xeda8afc26b6753e72ae696a21dc747c6423be780a4d90482793e05f4d265ab54\",\"urls\":[\"bzz-raw://46a2c1adfbabf52cbc60aee19227e6c5c0b0bfbb97c38800b0be309426934e70\",\"dweb:/ipfs/QmRvwZuAtQHrT3SpqmCjJ3aqFv3SwfZNZ2Lvwz25VnwMyY\"]},\"project:/contracts/PlayerData.sol\":{\"keccak256\":\"0x7882a71279315c718c3adb229e44dcb0c8f72e9baf7caaeafbe95611efc170b2\",\"urls\":[\"bzz-raw://cb955085d68ea84da7cb644730bd752338ebf41f5388ff2945d0a83a62b34134\",\"dweb:/ipfs/QmWvXPbbZBXsBjJNYows5fZbgXvTXyPzm92qRBMTNzAWLV\"]}},\"version\":1}",
+  "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220e8335c5c2cff8ad7a6dee878e4507588a2971fe058c5e06db0869dfe324b9d5364736f6c63430008070033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220e8335c5c2cff8ad7a6dee878e4507588a2971fe058c5e06db0869dfe324b9d5364736f6c63430008070033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "29:742:14:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;29:742:14;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "29:742:14:-:0;;;;;;;;",
+  "source": "import \"./EnumType.sol\" ;\n  \nlibrary PlayerData{  \n\n    \n    struct votingStage{\n        //private\n        int votingStage1;\n        int  votingStage2;\n        //private\n        EnumType.votingState phase;\n        EnumType.revealVote reveal_1;\n        EnumType.revealVote reveal_2;\n\n\n    }\n\n    struct playerState\n    {\n        EnumType.playerType playerType;\n        int256 reputation;\n        bytes32 position;\n        uint256 weight;\n        bytes32 username;\n        mapping ( uint256 => bytes32 ) commitments;\n        //mapping ( uint256 =>int ) votes;\n        //the associative array designNo voting struct\n        mapping ( uint256 =>votingStage) votes1;\n        mapping ( uint256 => bool ) received;\n        uint256[] designes;\n        uint256 balance;\n    }\n\n\n\n}\n",
+  "sourcePath": "/Users/antoniopipitone/Desktop/Air Factories 2.0/af2-smart-contract/contracts/PlayerData.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/PlayerData.sol",
+    "exportedSymbols": {
+      "EnumType": [
+        3652
+      ],
+      "PlayerData": [
+        3699
+      ]
+    },
+    "id": 3700,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "absolutePath": "project:/contracts/EnumType.sol",
+        "file": "./EnumType.sol",
+        "id": 3654,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 3700,
+        "sourceUnit": 3653,
+        "src": "0:25:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 3699,
+        "linearizedBaseContracts": [
+          3699
+        ],
+        "name": "PlayerData",
+        "nameLocation": "37:10:14",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "PlayerData.votingStage",
+            "id": 3668,
+            "members": [
+              {
+                "constant": false,
+                "id": 3656,
+                "mutability": "mutable",
+                "name": "votingStage1",
+                "nameLocation": "111:12:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3668,
+                "src": "107:16:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                },
+                "typeName": {
+                  "id": 3655,
+                  "name": "int",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "107:3:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3658,
+                "mutability": "mutable",
+                "name": "votingStage2",
+                "nameLocation": "138:12:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3668,
+                "src": "133:17:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                },
+                "typeName": {
+                  "id": 3657,
+                  "name": "int",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "133:3:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3661,
+                "mutability": "mutable",
+                "name": "phase",
+                "nameLocation": "199:5:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3668,
+                "src": "178:26:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_votingState_$3628",
+                  "typeString": "enum EnumType.votingState"
+                },
+                "typeName": {
+                  "id": 3660,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 3659,
+                    "name": "EnumType.votingState",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 3628,
+                    "src": "178:20:14"
+                  },
+                  "referencedDeclaration": 3628,
+                  "src": "178:20:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_votingState_$3628",
+                    "typeString": "enum EnumType.votingState"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3664,
+                "mutability": "mutable",
+                "name": "reveal_1",
+                "nameLocation": "234:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3668,
+                "src": "214:28:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_revealVote_$3631",
+                  "typeString": "enum EnumType.revealVote"
+                },
+                "typeName": {
+                  "id": 3663,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 3662,
+                    "name": "EnumType.revealVote",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 3631,
+                    "src": "214:19:14"
+                  },
+                  "referencedDeclaration": 3631,
+                  "src": "214:19:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_revealVote_$3631",
+                    "typeString": "enum EnumType.revealVote"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3667,
+                "mutability": "mutable",
+                "name": "reveal_2",
+                "nameLocation": "272:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3668,
+                "src": "252:28:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_revealVote_$3631",
+                  "typeString": "enum EnumType.revealVote"
+                },
+                "typeName": {
+                  "id": 3666,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 3665,
+                    "name": "EnumType.revealVote",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 3631,
+                    "src": "252:19:14"
+                  },
+                  "referencedDeclaration": 3631,
+                  "src": "252:19:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_revealVote_$3631",
+                    "typeString": "enum EnumType.revealVote"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "votingStage",
+            "nameLocation": "68:11:14",
+            "nodeType": "StructDefinition",
+            "scope": 3699,
+            "src": "61:228:14",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PlayerData.playerState",
+            "id": 3698,
+            "members": [
+              {
+                "constant": false,
+                "id": 3671,
+                "mutability": "mutable",
+                "name": "playerType",
+                "nameLocation": "348:10:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "328:30:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_playerType_$3634",
+                  "typeString": "enum EnumType.playerType"
+                },
+                "typeName": {
+                  "id": 3670,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 3669,
+                    "name": "EnumType.playerType",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 3634,
+                    "src": "328:19:14"
+                  },
+                  "referencedDeclaration": 3634,
+                  "src": "328:19:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_playerType_$3634",
+                    "typeString": "enum EnumType.playerType"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3673,
+                "mutability": "mutable",
+                "name": "reputation",
+                "nameLocation": "375:10:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "368:17:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                },
+                "typeName": {
+                  "id": 3672,
+                  "name": "int256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "368:6:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3675,
+                "mutability": "mutable",
+                "name": "position",
+                "nameLocation": "403:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "395:16:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 3674,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "395:7:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3677,
+                "mutability": "mutable",
+                "name": "weight",
+                "nameLocation": "429:6:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "421:14:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3676,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "421:7:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3679,
+                "mutability": "mutable",
+                "name": "username",
+                "nameLocation": "453:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "445:16:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 3678,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "445:7:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3683,
+                "mutability": "mutable",
+                "name": "commitments",
+                "nameLocation": "502:11:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "471:42:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                  "typeString": "mapping(uint256 => bytes32)"
+                },
+                "typeName": {
+                  "id": 3682,
+                  "keyType": {
+                    "id": 3680,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "481:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "471:30:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                    "typeString": "mapping(uint256 => bytes32)"
+                  },
+                  "valueType": {
+                    "id": 3681,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "492:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3688,
+                "mutability": "mutable",
+                "name": "votes1",
+                "nameLocation": "654:6:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "621:39:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_votingStage_$3668_storage_$",
+                  "typeString": "mapping(uint256 => struct PlayerData.votingStage)"
+                },
+                "typeName": {
+                  "id": 3687,
+                  "keyType": {
+                    "id": 3684,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "631:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "621:32:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_votingStage_$3668_storage_$",
+                    "typeString": "mapping(uint256 => struct PlayerData.votingStage)"
+                  },
+                  "valueType": {
+                    "id": 3686,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 3685,
+                      "name": "votingStage",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 3668,
+                      "src": "641:11:14"
+                    },
+                    "referencedDeclaration": 3668,
+                    "src": "641:11:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_votingStage_$3668_storage_ptr",
+                      "typeString": "struct PlayerData.votingStage"
+                    }
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3692,
+                "mutability": "mutable",
+                "name": "received",
+                "nameLocation": "698:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "670:36:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+                  "typeString": "mapping(uint256 => bool)"
+                },
+                "typeName": {
+                  "id": 3691,
+                  "keyType": {
+                    "id": 3689,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "680:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "670:27:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+                    "typeString": "mapping(uint256 => bool)"
+                  },
+                  "valueType": {
+                    "id": 3690,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "691:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3695,
+                "mutability": "mutable",
+                "name": "designes",
+                "nameLocation": "726:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "716:18:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                  "typeString": "uint256[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 3693,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "716:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3694,
+                  "nodeType": "ArrayTypeName",
+                  "src": "716:9:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                    "typeString": "uint256[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3697,
+                "mutability": "mutable",
+                "name": "balance",
+                "nameLocation": "752:7:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "744:15:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3696,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "744:7:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "playerState",
+            "nameLocation": "302:11:14",
+            "nodeType": "StructDefinition",
+            "scope": 3699,
+            "src": "295:471:14",
+            "visibility": "public"
+          }
+        ],
+        "scope": 3700,
+        "src": "29:742:14",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:772:14"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/PlayerData.sol",
+    "exportedSymbols": {
+      "EnumType": [
+        3652
+      ],
+      "PlayerData": [
+        3699
+      ]
+    },
+    "id": 3700,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "absolutePath": "project:/contracts/EnumType.sol",
+        "file": "./EnumType.sol",
+        "id": 3654,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 3700,
+        "sourceUnit": 3653,
+        "src": "0:25:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 3699,
+        "linearizedBaseContracts": [
+          3699
+        ],
+        "name": "PlayerData",
+        "nameLocation": "37:10:14",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "PlayerData.votingStage",
+            "id": 3668,
+            "members": [
+              {
+                "constant": false,
+                "id": 3656,
+                "mutability": "mutable",
+                "name": "votingStage1",
+                "nameLocation": "111:12:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3668,
+                "src": "107:16:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                },
+                "typeName": {
+                  "id": 3655,
+                  "name": "int",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "107:3:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3658,
+                "mutability": "mutable",
+                "name": "votingStage2",
+                "nameLocation": "138:12:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3668,
+                "src": "133:17:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                },
+                "typeName": {
+                  "id": 3657,
+                  "name": "int",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "133:3:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3661,
+                "mutability": "mutable",
+                "name": "phase",
+                "nameLocation": "199:5:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3668,
+                "src": "178:26:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_votingState_$3628",
+                  "typeString": "enum EnumType.votingState"
+                },
+                "typeName": {
+                  "id": 3660,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 3659,
+                    "name": "EnumType.votingState",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 3628,
+                    "src": "178:20:14"
+                  },
+                  "referencedDeclaration": 3628,
+                  "src": "178:20:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_votingState_$3628",
+                    "typeString": "enum EnumType.votingState"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3664,
+                "mutability": "mutable",
+                "name": "reveal_1",
+                "nameLocation": "234:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3668,
+                "src": "214:28:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_revealVote_$3631",
+                  "typeString": "enum EnumType.revealVote"
+                },
+                "typeName": {
+                  "id": 3663,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 3662,
+                    "name": "EnumType.revealVote",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 3631,
+                    "src": "214:19:14"
+                  },
+                  "referencedDeclaration": 3631,
+                  "src": "214:19:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_revealVote_$3631",
+                    "typeString": "enum EnumType.revealVote"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3667,
+                "mutability": "mutable",
+                "name": "reveal_2",
+                "nameLocation": "272:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3668,
+                "src": "252:28:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_revealVote_$3631",
+                  "typeString": "enum EnumType.revealVote"
+                },
+                "typeName": {
+                  "id": 3666,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 3665,
+                    "name": "EnumType.revealVote",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 3631,
+                    "src": "252:19:14"
+                  },
+                  "referencedDeclaration": 3631,
+                  "src": "252:19:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_revealVote_$3631",
+                    "typeString": "enum EnumType.revealVote"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "votingStage",
+            "nameLocation": "68:11:14",
+            "nodeType": "StructDefinition",
+            "scope": 3699,
+            "src": "61:228:14",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PlayerData.playerState",
+            "id": 3698,
+            "members": [
+              {
+                "constant": false,
+                "id": 3671,
+                "mutability": "mutable",
+                "name": "playerType",
+                "nameLocation": "348:10:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "328:30:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_playerType_$3634",
+                  "typeString": "enum EnumType.playerType"
+                },
+                "typeName": {
+                  "id": 3670,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 3669,
+                    "name": "EnumType.playerType",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 3634,
+                    "src": "328:19:14"
+                  },
+                  "referencedDeclaration": 3634,
+                  "src": "328:19:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_playerType_$3634",
+                    "typeString": "enum EnumType.playerType"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3673,
+                "mutability": "mutable",
+                "name": "reputation",
+                "nameLocation": "375:10:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "368:17:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                },
+                "typeName": {
+                  "id": 3672,
+                  "name": "int256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "368:6:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3675,
+                "mutability": "mutable",
+                "name": "position",
+                "nameLocation": "403:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "395:16:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 3674,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "395:7:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3677,
+                "mutability": "mutable",
+                "name": "weight",
+                "nameLocation": "429:6:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "421:14:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3676,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "421:7:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3679,
+                "mutability": "mutable",
+                "name": "username",
+                "nameLocation": "453:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "445:16:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 3678,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "445:7:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3683,
+                "mutability": "mutable",
+                "name": "commitments",
+                "nameLocation": "502:11:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "471:42:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                  "typeString": "mapping(uint256 => bytes32)"
+                },
+                "typeName": {
+                  "id": 3682,
+                  "keyType": {
+                    "id": 3680,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "481:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "471:30:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                    "typeString": "mapping(uint256 => bytes32)"
+                  },
+                  "valueType": {
+                    "id": 3681,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "492:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3688,
+                "mutability": "mutable",
+                "name": "votes1",
+                "nameLocation": "654:6:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "621:39:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_votingStage_$3668_storage_$",
+                  "typeString": "mapping(uint256 => struct PlayerData.votingStage)"
+                },
+                "typeName": {
+                  "id": 3687,
+                  "keyType": {
+                    "id": 3684,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "631:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "621:32:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_votingStage_$3668_storage_$",
+                    "typeString": "mapping(uint256 => struct PlayerData.votingStage)"
+                  },
+                  "valueType": {
+                    "id": 3686,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 3685,
+                      "name": "votingStage",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 3668,
+                      "src": "641:11:14"
+                    },
+                    "referencedDeclaration": 3668,
+                    "src": "641:11:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_votingStage_$3668_storage_ptr",
+                      "typeString": "struct PlayerData.votingStage"
+                    }
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3692,
+                "mutability": "mutable",
+                "name": "received",
+                "nameLocation": "698:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "670:36:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+                  "typeString": "mapping(uint256 => bool)"
+                },
+                "typeName": {
+                  "id": 3691,
+                  "keyType": {
+                    "id": 3689,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "680:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "670:27:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+                    "typeString": "mapping(uint256 => bool)"
+                  },
+                  "valueType": {
+                    "id": 3690,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "691:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3695,
+                "mutability": "mutable",
+                "name": "designes",
+                "nameLocation": "726:8:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "716:18:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                  "typeString": "uint256[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 3693,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "716:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3694,
+                  "nodeType": "ArrayTypeName",
+                  "src": "716:9:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                    "typeString": "uint256[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3697,
+                "mutability": "mutable",
+                "name": "balance",
+                "nameLocation": "752:7:14",
+                "nodeType": "VariableDeclaration",
+                "scope": 3698,
+                "src": "744:15:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3696,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "744:7:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "playerState",
+            "nameLocation": "302:11:14",
+            "nodeType": "StructDefinition",
+            "scope": 3699,
+            "src": "295:471:14",
+            "visibility": "public"
+          }
+        ],
+        "scope": 3700,
+        "src": "29:742:14",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:772:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-02-26T23:47:21.929Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
