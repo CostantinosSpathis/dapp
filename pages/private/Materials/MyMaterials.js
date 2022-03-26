@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import Materialclass from '../../contract/abiclasses/Materialclass';
+import OnBoardin from '../../../components/APIs/contracts/OnBoard';
 import Button from 'react-bootstrap/Button';
+import Material from './Material';
 
 export class MyMaterials extends Component {
   
@@ -9,29 +10,32 @@ export class MyMaterials extends Component {
   
     this.state = {
        contract: null,
+       materials: []
       }
-    this.contract = new Materialclass()
+    this.contract = new OnBoardin()
   }
 
+async componentDidMount(){
 
+  var material = await this.contract.printMats();
+  console.log(material)
+  this.setState({ materials : material })
+}
 
-  test = async () => {
-    for(var i =0; i<5;i++){
-     //SOSTITUIRE POI CON LA STAMPA DELLE STAMPANTI
-    }
-    var mats = await this.contract.printMats();
-    for(var m of mats){
-      console.log(m);
-    }
-  }
 
   render() {
+    const MaterialList = this.state.materials.map(material =><Material material ={material} /> )
     return (
-      <div>
-      <h1>AGGIORNA/VEDI MATERIALI</h1>
-      <Button variant="secondary" onClick={this.test}>Aggiorna materiale</Button>
-      <Button variant="secondary" onClick={this.test}>Stampa Materiale</Button>
+      <>
+      <h1>I TUOI MATERIALI</h1>
+      <div className='container'>
+      {MaterialList}
       </div>
+     {/*this.state.materials.map((m) =>{
+      return <p> {m}</p>  
+     }
+    )*/} 
+    </>
     )
   }
 }

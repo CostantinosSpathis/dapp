@@ -33,35 +33,23 @@ import BuyToken from './pages/private/Token/BuyToken';
 //IMPORT MAPS FOR TESTS DELETE AFTER COMPLETE
 import Maps from './components/APIs/Maps/Maps';
 
-//IMPORT PAGE MODIFY MATERIALS
+//IMPORT MATERIAL PAGES
+import MyMaterials from './pages/private/Materials/MyMaterials';
+import NewMaterial from './pages/private/Materials/NewMaterial'
 
 
 
 function App(){
 
-const isUser= ()=>{
-    return true
-}
-
-const isMaker= () =>{
-    return true
-}
-
 useEffect(() => {
-    if (!isUser()){
-        //redirect to home
-        alert("Register !")
-        return(
-        <Home />
-        )
-    }
     loadWeb3();
     loadBlockchaindata();
 },[])
 
 const [currentaccount,setCurrentaccount] = useState("");
 const[loader,setloader]= useState(true);
-const[design,Setdesign] = useState();
+
+
 
 const loadWeb3 = async() => {
     if(window.ethereum){
@@ -111,6 +99,7 @@ if(loader){
 
 return(
     <div> 
+        {/*aggiungi div per imm e text*/}
 <div>
           <BrowserRouter>
               <Routes>
@@ -127,6 +116,8 @@ return(
                   <Route path="BuyToken" element={<BuyToken />}/>
                   <Route path="MyDesign" element={<MyDesign />}/>
                   <Route path="NewOrder" element={<NewOrder />}/>
+                  <Route path="MyMaterials" element={<MyMaterials />}/>
+                  <Route path="NewMaterial" element={<NewMaterial />}/>
                   <Route path="Maps" element={<Maps />}/>
                   </Route>
               </Routes>

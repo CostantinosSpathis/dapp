@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Materialclass from '../../contract/abiclasses/Materialclass';
+import OnBoardin from '../../../components/APIs/contracts/OnBoard';
 import Button from 'react-bootstrap/Button';
 
 export class NewMaterial extends Component {
@@ -11,7 +11,7 @@ export class NewMaterial extends Component {
        contract: null,
        color : 0,
     }
-    this.contract = new Materialclass()
+    this.contract = new OnBoardin()
   }
 
   test = async () => {

@@ -25,7 +25,9 @@ class Signup extends React.Component{
             surname : '',
             enabledCheckBox: false,
             dalleore: null,
-            alleore: null
+            alleore: null,
+            latitude: null,
+            longitude: null,
             
         }
         this.contract= new IUser()
@@ -50,6 +52,8 @@ changeUser = async (event)=> {
   test = async () => {
     const username = this.state.username;
     const maker = this.state.enabledCheckBox;
+    const latitude = this.state.latitude;
+    const longitude = this.state.longitude;
     await this.contract.AddUser(username,maker)
   };
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import printstamp from '../../../components/APIs/contracts/printstamp'
 import Button from 'react-bootstrap/Button';
 import { Outlet, Link } from "react-router-dom";
+import Printer from './Printer';
 
 class MyPrinters extends Component {
 
@@ -12,10 +13,11 @@ constructor(props) {
     printerAddress: '',
     printerName:'',
      contract: null,
+     printers: []
   }
   this.contract = new printstamp()
 }
-
+/*
 test = async () => {
   for(var i =0; i<5;i++){
    //SOSTITUIRE POI CON LA STAMPA DELLE STAMPANTI
@@ -25,18 +27,24 @@ test = async () => {
     console.log(p);
   }
   
-};
+};*/
+async componentDidMount(){
 
-  render() {
+  var printer = await this.contract.printPrinters();
+  console.log(printer)
+  this.setState({ printers : printer })
+}
 
-
+  render() { //WORK
+    const PrintersList = this.state.printers.map(printer => <Printer printer = {printer} />)
+    console.log(PrintersList)
     return (
       <div>
-        <h1>Ciao !</h1>
-        <p><Button variant='outline-secondary' size='lg' onClick={this.test}>Visualizza le tue stampanti</Button></p>
-        <Button className ="button">
-          <Link to="/ModifyMat">Modifica materiali</Link>
-          </Button>
+        <h1>Your Printers</h1>
+        {/*<p><Button variant='outline-secondary' size='lg' onClick={this.test}>Visualizza le tue stampanti</Button></p>*/}
+        <div className='container'>
+        {PrintersList}
+        </div>
       </div> //THIS.PRINTER IS UNDEFINED
     )
   }
