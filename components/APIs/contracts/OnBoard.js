@@ -40,31 +40,13 @@ export default class OnBoardin{
         let accounts = await this.provider.getAccounts()
         let testAccount = accounts[0]
         await this.contract.methods.addMaterials(
-            this.utils.asciiToHex("ciaone5"),     //Nome
+            this.utils.asciiToHex("prova1"),     //Nome
             1,                              //Tipo di materiale | 0 - ABS , 1 - PLA, 2 - PETG
             1,                              //Colore
             5,                              //Quantità KG
             100,                            //Quantità M
             100,                            //Printer temp
             100,                            //Printer bed
-        ).send({from:testAccount})
-        await this.contract.methods.addMaterials(
-            this.utils.asciiToHex("ciaone4"),
-            2,
-            4, 
-            5, 
-            100, 
-            100, 
-            100,
-        ).send({from:testAccount})
-        await this.contract.methods.addMaterials(
-            this.utils.asciiToHex("ciaone6"),
-            0,
-            2, 
-            5, 
-            10, 
-            100, 
-            100,
         ).send({from:testAccount})
     }
     async printMats(){
