@@ -20,19 +20,19 @@ export default class OnBoardin{
         //*Stampalo per check
         this.contract = new this.web3.eth.Contract(ABIScheduling, ContractAddress);
     }
-    async registerPrinter(printerAddress){
+    async registerPrinter(printerAddress,printerName,soluble,food){
         let account = await this.provider.checkIfWalletIsConnected();
                 await this.contract.methods.addPrinter(
                     printerAddress,                     //Indirizzo Stampante
-                    this.utils.asciiToHex("test"),      //Nome
+                    this.utils.asciiToHex(printerName),      //Nome
                     [0,1],                              //Array of supportedMaterial - 1= 2= 3=
                     [0,1,2],                            //Array of supportedNozzles
                     2,                                  //Nozzle mounted 
                     100,                                //Max print temperature
                     100,                                //Max bed temperature
                     40,                                 //Volume L
-                    false,                              //soluble
-                    true                                //food safety
+                    soluble,                              //soluble
+                    food                                //food safety
                 ).send({from:account}) //Non inserire i gas nell frontend ma sì nel mobile
 
     }

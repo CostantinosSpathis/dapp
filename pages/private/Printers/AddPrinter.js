@@ -109,12 +109,21 @@ class AddPrinter extends React.Component {
       this.setState({ noz1: !this.state.noz1 });
     };
 
+    onClickfood = () => {
+      this.setState({ foodSafety: !this.state.foodSafety });
+    };
+
+    onClicksoluble = () => {
+      this.setState({ solubleSupport: !this.state.solubleSupport });
+    };
+
     changeNamePrinter = async (event)=> {
       event.preventDefault()
       const stri = event.target.value
       await this.setState({printerName : stri})
       console.log(this.state.printerName)
   }
+
 
  
   changeAddressPrinter = async (event)=> {
@@ -125,6 +134,8 @@ class AddPrinter extends React.Component {
 }
 
 
+
+
 sendDataPrinter = async (event) => {
   event.preventDefault()
 
@@ -132,7 +143,15 @@ sendDataPrinter = async (event) => {
 
   const printerAddress = this.state.printerAddress
 
-  const  enabledCheckBox= this.state.enabledCheckBox
+  const soluble = this.state.solubleSupport
+
+  const food = this.state.foodSafety
+
+
+  //const  enabledCheckBox= this.state.enabledCheckBox
+
+  const PLA = this.state.enabledCheckBox
+  console.log("PLA",PLA)
 
   const ABS = this.state.ABS
   console.log("ABS",ABS)
@@ -170,16 +189,17 @@ sendDataPrinter = async (event) => {
   const noz9 = this.state.noz9
   console.log("noz9",noz9)
 
-  await this.contract.registerPrinter(printerAddress);
+
+  await this.contract.registerPrinter(printerAddress,printerName,soluble,food);
   
 }
 
   render() {
 
-        function printTemperatureFormat(num){
-        return num + 'Celsius';
-        }
 
+    function printTemperatureFormat(num){
+      return num +'celsius';
+    }
         function printNozzleFormat(numm){
           return numm +'mm';
         }
@@ -232,21 +252,17 @@ sendDataPrinter = async (event) => {
 
 
         <form>
-        <NumericInput placeholder="printTemperature" min={0} step={1} format={printTemperatureFormat} mobile="auto" onChange={this.printTemperature}/>
+        <NumericInput placeholder="printTemp" min={0} step={1} format={printTemperatureFormat} mobile="auto" onChange={this.state.printTemperature} />
         </form>
 
         <form>
         <NumericInput placeholder="bed temperature" min={0} step={1} format={printTemperatureFormat} mobile="auto" onChange={this.bedTemperature}/>
         </form>
 
-
-        <label>
-        <Select className="SelectReact1" onChange = {this.solubleSupport} defaultValue={{value:'true', label:'soluble support'}} options={solrange}/>
-        </label>
-
-        <label>
-        <Select className="SelectReact1" onChange = {this.foodSafety} defaultValue={ {value: 'true',label: 'food-safe'} } options={solrange}/>
-        </label>
+      FOOD
+        <input type="checkbox" defaultChecked={this.state.foodSafety} onChange={this.onClickfood} /> <br />
+      SOLUBLE 
+        <input type="checkbox" defaultChecked={this.state.solubleSupport} onChange={this.onClicksoluble} />
 
         <p><Button variant='outline-secondary' size='lg' onClick={this.sendDataPrinter}>Send</Button></p>
 
